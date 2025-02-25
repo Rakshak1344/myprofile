@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
-import 'profile_page.dart';
+import 'package:profile/my_app.dart';
+import 'package:profile/my_app_config.dart';
+import 'package:profile/splash_app.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const SplashApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColorDark: Colors.black38,
-        brightness: Brightness.light,
-        backgroundColor: Colors.white70
-      ),
-      home: ProfilePage(),
-    );
-  }
+  MyAppConfig().init(child: const MyApp()).then((widget) => runApp(widget));
 }

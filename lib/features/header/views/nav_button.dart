@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class NavButton extends StatelessWidget {
   final text;
   final onPressed;
-  final Color color;
+  final Color? color;
   final IconData icon;
   final Color iconColor;
 
   const NavButton({
-    Key key,
+    Key? key,
     this.text,
-    @required this.onPressed,
+    required this.onPressed,
     this.color,
-    @required this.iconColor,
-    @required this.icon,
+    required this.iconColor,
+    required this.icon,
   }) : super(key: key);
 
   @override

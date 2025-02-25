@@ -10,11 +10,11 @@ class MobileViewCard extends StatelessWidget {
   String backImageUrl;
   Row buttons;
   MobileViewCard({
-    this.projectName,
-    this.projectDescription,
-    this.frontImageURL,
-    this.backImageUrl,
-    this.buttons
+    required this.projectName,
+    required this.projectDescription,
+    required this.frontImageURL,
+    required this.backImageUrl,
+    required this.buttons
   });
   @override
   Widget build(BuildContext context) {

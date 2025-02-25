@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../responsive_view.dart';
+import '../arch/view/responsive_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class InfoDialog extends StatelessWidget {

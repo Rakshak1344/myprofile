@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './dialog/info_dialog.dart';
-import 'responsive_view.dart';
+import '../../../dialog/info_dialog.dart';
+import '../../../arch/view/responsive_view.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'nav_button.dart';
 

@@ -8,12 +8,14 @@ class DesktopViewCard extends StatelessWidget {
   String frontImageURL;
   String backImageUrl;
   Column buttons;
+
   DesktopViewCard(
-      {this.projectName,
-      this.projectDescription,
-      this.frontImageURL,
-      this.backImageUrl,
-      this.buttons});
+      {required this.projectName,
+      required this.projectDescription,
+      required this.frontImageURL,
+      required this.backImageUrl,
+      required this.buttons});
+
   @override
   Widget build(BuildContext context) {
     return FlipCard(
