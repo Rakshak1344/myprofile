@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:profile/arch/view/riverpod_widgets/responsive_consumer_stateful_widget.dart';
+import 'package:profile/features/app_navigation_buttons.dart';
 import 'package:profile/features/profile/views/widgets/navigation_rail.dart';
 import 'package:profile/features/profile/views/widgets/r_g_initial.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
@@ -52,10 +53,7 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
       body: widget.child,
       appBar: AppBar(
         title: RGInitial(),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(80),
-          child: buildNavBar(context),
-        ),
+        actions: [NavigationBarButtons(state: widget.state)],
       ),
     );
   }

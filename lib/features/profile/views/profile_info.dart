@@ -1,14 +1,10 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:profile/arch/view/responsive_view.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
-import 'package:profile/features/profile/views/widgets/action_icons.dart';
 import 'package:profile/features/profile/views/widgets/experience_in.dart';
 import 'package:profile/features/profile/views/widgets/my_image.dart';
 import 'package:profile/features/profile/views/widgets/my_name.dart';
 import 'package:profile/features/profile/views/widgets/resume_button.dart';
-import '../../../arch/view/responsive_view.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ProfileInfo extends ResponsiveStatelessWidget {
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:profile/arch/view/responsive_view.dart';
 
 class BuiltResponsiveFlutter extends StatelessWidget {
   final flutterIcon = "https://img.icons8.com/ios/50/000000/flutter.png";
