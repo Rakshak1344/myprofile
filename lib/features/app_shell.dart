@@ -27,7 +27,7 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
     return Scaffold(
       body: Row(
         children: [
-          AppNavigationRail(),
+          AppNavigationRail(state: widget.state),
           Expanded(child: widget.child),
         ],
       ),

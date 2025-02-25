@@ -1,14 +1,18 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:profile/arch/view/riverpod_widgets/responsive_consumer_stateful_widget.dart';
 import 'package:profile/features/profile/views/widgets/action_icons.dart';
 import 'package:profile/features/profile/views/widgets/my_image.dart';
 import 'package:profile/features/profile/views/widgets/r_g_initial.dart';
+import 'package:profile/navigation/routes/app_route_name.dart';
 
 class AppNavigationRail extends ResponsiveConsumerStatefulWidget {
-  const AppNavigationRail({Key? key}) : super(key: key);
+  final GoRouterState state;
+
+  const AppNavigationRail({Key? key, required this.state}) : super(key: key);
 
   ResponsiveConsumerState<AppNavigationRail> createState() =>
       _AppNavigationRailState();
@@ -16,8 +20,6 @@ class AppNavigationRail extends ResponsiveConsumerStatefulWidget {
 
 class _AppNavigationRailState
     extends ResponsiveConsumerState<AppNavigationRail> {
-  var selectedIndex = 0;
-
   @override
   Widget buildMobile(BuildContext context, WidgetRef ref) {
     return buildNavRail();
@@ -33,12 +35,35 @@ class _AppNavigationRailState
     return buildNavRail();
   }
 
+  List<String> routesNames = [
+    AppRouteName.me,
+    AppRouteName.career,
+    AppRouteName.projects,
+    AppRouteName.education,
+    AppRouteName.contact,
+  ];
+
+  int get index {
+    var location = widget.state.uri.toString();
+    // Create new location without query parameters
+    if (location.contains('?')) {
+      location = location.substring(0, location.indexOf('?'));
+    }
+
+    return routesNames.indexWhere(
+      (String route) => context.namedLocation(route) == location,
+    );
+  }
+
   Widget buildNavRail() {
     return NavigationRail(
       extended: true,
-      selectedIndex: selectedIndex,
+      selectedIndex: index,
       destinations: destinations(),
       leading: buildLeading(),
+      onDestinationSelected: (int index) {
+        context.goNamed(routesNames[index]);
+      },
     );
   }
 
