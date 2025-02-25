@@ -40,7 +40,10 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
       appBar: buildMobileAppBar(),
       endDrawer: Drawer(
         child: Column(
-          children: [Text("Drawer")],
+          children: [
+            Text("Drawer"),
+            AppNavigationButtons(state: widget.state),
+          ],
         ),
       ),
       body: widget.child,
@@ -52,8 +55,9 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
     return Scaffold(
       body: widget.child,
       appBar: AppBar(
+        elevation: 0.0,
         title: RGInitial(),
-        actions: [NavigationBarButtons(state: widget.state)],
+        actions: [AppNavigationButtons(state: widget.state)],
       ),
     );
   }
@@ -95,53 +99,4 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
       (String route) => context.namedLocation(route) == location,
     );
   }
-
-  Widget buildNavBar(BuildContext context) {
-    return NavigationBar(
-      selectedIndex: index,
-      onDestinationSelected: (int index) => context.goNamed(routesNames[index]),
-      destinations: [
-        // TextButton.icon(
-        //   onPressed: () {},
-        //   label: Text("Me"),
-        //   icon: Icon(Icons.person_outline_rounded),
-        // ),
-        NavigationDestination(
-            icon: Icon(Icons.person_outline_rounded), label: "Me"),
-        NavigationDestination(icon: Icon(Icons.computer), label: "Career"),
-        NavigationDestination(icon: Icon(Icons.code), label: "Projects"),
-        NavigationDestination(
-            icon: Icon(Icons.star_border_rounded), label: "Education"),
-        NavigationDestination(
-            icon: Icon(Icons.email_outlined), label: "Contact")
-      ],
-    );
-  }
-
-// Widget buildInfoIcon(BuildContext context) {
-//   return Container(
-//     width: MediaQuery.of(context).size.width * 0.5,
-//     height: MediaQuery.of(context).size.height,
-//     child: Drawer(
-//       elevation: 0.0,
-//       child: ListView(
-//         padding: EdgeInsets.all(20),
-//         children: <Widget>[
-//           NavButton(
-//             text: "Info",
-//             iconColor: Colors.red,
-//             icon: MdiIcons.informationOutline,
-//             onPressed: () {
-//               showDialog(
-//                 context: context,
-//                 builder: (BuildContext context) => InfoDialog(),
-//                 barrierDismissible: true,
-//               );
-//             },
-//           ),
-//         ],
-//       ),
-//     ),
-//   );
-// }
 }
