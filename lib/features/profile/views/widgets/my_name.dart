@@ -8,29 +8,29 @@ class MyName extends ResponsiveStatelessWidget {
 
   @override
   Widget buildDesktop(BuildContext context) {
-    return buildMyName(fontSize: MediaQuery.of(context).size.height * 0.1);
+    return buildMyName(context, fontSize: MediaQuery.of(context).size.width * 0.06);
   }
 
   @override
   Widget buildMobile(BuildContext context) {
-    return buildMyName(fontSize: MediaQuery.of(context).size.height * 0.06);
+    return buildMyName(context,fontSize: MediaQuery.of(context).size.height * 0.06);
   }
 
   @override
   Widget buildTablet(BuildContext context) {
-    return buildMyName(fontSize: MediaQuery.of(context).size.height * 0.06);
+    return buildMyName(context, fontSize: MediaQuery.of(context).size.height * 0.06);
   }
 
-  Widget buildMyName({double? fontSize}) {
+  Widget buildMyName(context, {double? fontSize}) {
     return AnimatedContainer(
       padding: EdgeInsets.all(10),
-      duration: Duration(seconds: 3),
+      duration: Duration(milliseconds: 200),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          AutoSizeText(
+          Text(
             'Rakshith Gajendra',
-            style: GoogleFonts.sacramento(
+            style:  GoogleFonts.sacramento(
               fontSize: fontSize,
               fontStyle: FontStyle.italic,
             ),

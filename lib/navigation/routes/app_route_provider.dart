@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:profile/arch/navigation/route_provider.dart';
 import 'package:profile/features/app_shell.dart';
+import 'package:profile/features/career/career_page.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
 import 'package:profile/features/profile/views/profile_page.dart';
 
@@ -36,7 +37,7 @@ class AppRoutesProvider extends RouteProvider {
                 path: 'career',
                 name: AppRouteName.career,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: Center(child: Text('Career'))),
+                    NoTransitionPage(child: CareerPage()),
               ),
               GoRoute(
                 path: 'projects',

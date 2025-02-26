@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:profile/arch/view/responsive_view.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
+import 'package:profile/features/profile/views/widgets/built_responsive_flutter.dart';
 import 'package:profile/features/profile/views/widgets/experience_in.dart';
 import 'package:profile/features/profile/views/widgets/my_image.dart';
 import 'package:profile/features/profile/views/widgets/my_name.dart';
 import 'package:profile/features/profile/views/widgets/resume_button.dart';
+import 'package:profile/features/socials/views/social_info.dart';
 
 class ProfileInfo extends ResponsiveStatelessWidget {
   @override
   Widget buildDesktop(BuildContext context) {
-    double nameTextSize = ResponsiveWidget.isSmallScreen(context) ? 8 : 12;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         MyImage(),
-        profileData(context, nameTextSize),
+        profileData(context),
       ],
     );
   }
@@ -31,19 +31,18 @@ class ProfileInfo extends ResponsiveStatelessWidget {
   }
 
   Widget buildMobileAndTablet(context) {
-    double nameTextSize = ResponsiveWidget.isSmallScreen(context) ? 8 : 12;
     return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         MyImage(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-        profileData(context, nameTextSize),
+        profileData(context),
       ],
     );
   }
 
-  Widget profileData(context, nameTextSize) {
+  Widget profileData(context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -55,6 +54,10 @@ class ProfileInfo extends ResponsiveStatelessWidget {
         experience(context),
         ExperienceIn(),
         ResumeButton(),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+        SocialInfo(),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+        BuiltResponsiveFlutter(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
       ],
     );

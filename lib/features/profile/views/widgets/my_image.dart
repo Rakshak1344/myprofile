@@ -7,7 +7,7 @@ class MyImage extends ResponsiveStatelessWidget {
   @override
   Widget buildDesktop(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 200),
       height: MediaQuery.of(context).size.width * 0.25,
       width: MediaQuery.of(context).size.width * 0.25,
       decoration: buildBoxDecoration(),
@@ -17,7 +17,7 @@ class MyImage extends ResponsiveStatelessWidget {
   @override
   Widget buildMobile(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 200),
       height: MediaQuery.of(context).size.height * 0.25,
       width: MediaQuery.of(context).size.height * 0.25,
       decoration: buildBoxDecoration(),
@@ -27,7 +27,7 @@ class MyImage extends ResponsiveStatelessWidget {
   @override
   Widget buildTablet(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 200),
       height: MediaQuery.of(context).size.height * 0.25,
       width: MediaQuery.of(context).size.height * 0.25,
       decoration: buildBoxDecoration(),
