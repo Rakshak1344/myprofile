@@ -81,6 +81,7 @@ class CareerPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
+              HorizontalLine()
             ],
           ),
         ),
