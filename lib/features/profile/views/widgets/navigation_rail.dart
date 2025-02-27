@@ -57,7 +57,7 @@ class _AppNavigationRailState
 
   Widget buildNavRail() {
     return NavigationRail(
-      extended: true,
+      extended: false,
       selectedIndex: index,
       destinations: destinations(),
       leading: buildLeading(),
@@ -72,7 +72,7 @@ class _AppNavigationRailState
       children: [
         SizedBox(height: 40),
         RGInitial(),
-        ActionIcons(),
+        // ActionIcons(),
       ],
     );
   }

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:profile/arch/navigation/route_provider.dart';
 import 'package:profile/features/app_shell.dart';
 import 'package:profile/features/career/career_page.dart';
+import 'package:profile/features/contact/contact_page.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
 import 'package:profile/features/profile/views/profile_page.dart';
 
@@ -55,32 +56,10 @@ class AppRoutesProvider extends RouteProvider {
                 path: 'contact',
                 name: AppRouteName.contact,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: Center(child: Text('Contacts'))),
+                    NoTransitionPage(child: ContactPage()),
               ),
             ],
           ),
-
-          // ShellRoute(
-          //   builder: (BuildContext context, GoRouterState state, Widget child) {
-          //     return AppShell(, child: child);
-          //   },
-          //   routes: [
-          //     GoRoute(
-          //       path: 'home',
-          //       name: AppRouteName.dashboard.home,
-          //       pageBuilder: (BuildContext context, GoRouterState state) =>
-          //       const NoTransitionPage(child: DashboardPage()),
-          //       // routes: [],
-          //     ),
-          //     GoRoute(
-          //       path: 'profile',
-          //       name: AppRouteName.dashboard.profile,
-          //       pageBuilder: (BuildContext context, GoRouterState state) =>
-          //       const NoTransitionPage(child: ProfilePage()),
-          //       // routes: [],
-          //     ),
-          //   ],
-          // ),
         ],
       ),
     ];

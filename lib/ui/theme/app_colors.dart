@@ -6,7 +6,7 @@ class AppColors {
   static const Color scaffoldBackground = Color(0xfff2f2f2);
 
   // Background Colors
-  static const Color background = Color(0xFFF0F6FF);
+  static const Color background = Colors.white;// Color(0xFFF0F6FF);
   static const Color onBackground = Color(0xFF1A1A1A);
 
   // Primary Colors

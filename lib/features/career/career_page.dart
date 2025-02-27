@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:profile/features/career/data/company_data.dart';
+import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
 
 import 'package:timeline_tile/timeline_tile.dart';
@@ -15,11 +16,11 @@ class CareerPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 20),
-          Text(
-            "Career",
-            style: Theme.of(context).textTheme.displayMedium,
+          TitleAndLine(
+            preTitle: "My",
+            title: "Experience",
           ),
-          HorizontalLine(),
+          SizedBox(height: 40),
           ...buildCareer(CompanyData.myCompanyData, context),
           SizedBox(height: 20),
         ],

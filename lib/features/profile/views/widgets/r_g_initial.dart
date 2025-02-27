@@ -11,7 +11,7 @@ class RGInitial extends ResponsiveStatelessWidget {
 
   @override
   Widget buildDesktop(BuildContext context) {
-    return buildRGInitial(context, fontSize: 52);
+    return buildRGInitial(context);
   }
 
   @override
