@@ -87,7 +87,7 @@ class AboutMe extends ResponsiveStatelessWidget {
   Widget buildCareer() {
     final List<String> logos = [
       Logos.zenya,
-      Logos.indipe1,
+      Logos.indipe,
       Logos.superpay,
       Logos.tezsure,
     ];

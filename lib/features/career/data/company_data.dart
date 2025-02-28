@@ -42,7 +42,7 @@ experience and functionality.
       ),
       CompanyData(
         name: "Indipe",
-        logo: Logos.indipe1,
+        logo: Logos.indipe,
         locatedAt: 'Pune, Maharashtra',
         url: "https://indipe.in",
         startData: "February 2023",
