@@ -28,4 +28,7 @@ groups:
   - path: assets/projects
     class_name: Projects
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
+  - path: assets/tech
+    class_name: TechImage
+    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
     

@@ -14,7 +14,7 @@ class BuiltResponsiveFlutter extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodySmall,
         ),
-        SizedBox(height: 20, width: 20, child: Image.asset(Logos.flutter)),
+        SizedBox(height: 20, width: 20, child: Image.asset(TechImage.flutter)),
       ],
     );
   }

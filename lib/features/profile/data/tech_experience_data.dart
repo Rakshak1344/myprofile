@@ -24,7 +24,7 @@ class TechExperienceData with _$TechExperienceData {
         TechExperienceData(
           name: 'Flutter',
           experienceLevel: 'Experienced',
-          assetUrl: Logos.flutter,
+          assetUrl: TechImage.flutter,
         ),
         TechExperienceData(
           name: 'Kotlin',
@@ -44,7 +44,7 @@ class TechExperienceData with _$TechExperienceData {
         TechExperienceData(
           name: 'MongoDB',
           experienceLevel: 'Intermediate',
-          assetUrl: Logos.mongoDb,
+          assetUrl: TechImage.mongoDb,
         ),
         TechExperienceData(
           name: 'Laravel',
@@ -94,7 +94,7 @@ class TechExperienceData with _$TechExperienceData {
         TechExperienceData(
           name: 'Sentry',
           experienceLevel: 'Intermediate',
-          assetUrl: Logos.sentry,
+          assetUrl: TechImage.sentry,
         ),
       ];
 }

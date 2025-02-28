@@ -31,7 +31,7 @@ class ProjectData with _$ProjectData {
 
   static List<ProjectData> get projects => <ProjectData>[
         ProjectData(
-          companyLogo: Logos.indipe,
+          companyLogo: TechImage.indipe,
           companyName: "Indipe paytech private limited",
           companyUrl: 'https://indipe.in/',
           name: "Indipe Business",
@@ -43,10 +43,14 @@ class ProjectData with _$ProjectData {
               'https://play.google.com/store/apps/details?id=in.indipe.merchant&pcampaignid=web_share',
           images: indipeBusiness,
           techIcons: [MdiIcons.laravel, MdiIcons.firebase],
-          techIconAssets: [Logos.flutter, Logos.pgsql, Logos.sentry],
+          techIconAssets: [
+            TechImage.flutter,
+            TechImage.pgsql,
+            TechImage.sentry
+          ],
         ),
         ProjectData(
-          companyLogo: Logos.indipe,
+          companyLogo: TechImage.indipe,
           companyName: "Indipe paytech private limited",
           companyUrl: 'https://indipe.in/',
           name: "Indipe",
@@ -59,7 +63,11 @@ class ProjectData with _$ProjectData {
               'https://play.google.com/store/apps/details?id=in.indipe.merchant&pcampaignid=web_share',
           images: indipeConsumer,
           techIcons: [MdiIcons.laravel, MdiIcons.firebase],
-          techIconAssets: [Logos.flutter, Logos.pgsql,Logos.sentry],
+          techIconAssets: [
+            TechImage.flutter,
+            TechImage.pgsql,
+            TechImage.sentry
+          ],
         ),
       ];
 

@@ -1,13 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
 import 'package:profile/features/projects/data/models/project_data.dart';
 import 'package:profile/features/projects/views/widgets/playstore_button.dart';
-import 'package:profile/resources/resources.dart';
 
 class ProjectDetailPage extends ResponsiveStatelessWidget {
   final ProjectData projectData;
@@ -58,6 +57,40 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 HorizontalLine(),
+                Container(
+                  height: 400,
+                  width: width,
+                  child: Markdown(data: '''
+          # driftic (Drift Isolate Cache)
+
+A Flutter project for the drift isolate in-memory, and persistence databases.
+Having multi instances of databases table's data access at once.
+
+## Getting Started
+
+Use FVM if you have or quickly install FVM based on you OS via this [link](https://fvm.app/documentation/getting-started/installation)
+
+Using force will pull the required version for the project.
+```bash
+fvm use --force
+```
+
+Then, run the following command to get the required dependencies, and gen files for the project.
+```bash
+chmod +x ./build.sh
+```
+
+```bash
+./build.sh
+```
+
+
+Available Screens:
+
+- [x] Multi-Dynamic In-Memory Drift Isolate Based on user's interest.
+- [x] Multi Persistence Drift Isolate.
+          '''),
+                )
               ],
             ),
           ),
@@ -126,7 +159,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
       child: CarouselSlider.builder(
         itemCount: projectData.images.length,
         itemBuilder: (context, i, _) =>
-            CachedNetworkImage(imageUrl: projectData.images[i]),
+            CachedNetworkImage(imageUrl: projectData.images[i],),
         options: CarouselOptions(autoPlay: true, enlargeCenterPage: true),
       ),
     );
