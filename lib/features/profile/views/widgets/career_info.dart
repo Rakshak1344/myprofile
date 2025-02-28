@@ -43,8 +43,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
   Widget buildCareerInfo(context) {
     return InkWell(
       onTap: navigateTo != null
-          ? () => AppConfig.navigatorKey.currentContext
-              ?.goNamed(AppRouteName.career)
+          ? () => AppConfig.navigatorKey.currentContext?.goNamed(navigateTo!)
           : null,
       child: Container(
         decoration: BoxDecoration(
@@ -77,7 +76,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  buildStackedLogos(),
+                  buildStackedLogos(context),
                   if (navigateTo != null)
                     NavButton(
                       onPressed: () => AppConfig.navigatorKey.currentContext
@@ -102,7 +101,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
     );
   }
 
-  Widget buildStackedLogos() {
+  Widget buildStackedLogos(context) {
     return Container(
       height: 60,
       child: Align(
@@ -116,7 +115,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
               final double offset = (index - (images.length - 1) / 100) * 40.0;
               return Positioned(
                 left: offset,
-                child: buildLogoCircle(images[index]),
+                child: buildLogoCircle(context, images[index]),
               );
             }),
           ),
@@ -125,12 +124,16 @@ class CareerInfo extends ResponsiveStatelessWidget {
     );
   }
 
-  Widget buildLogoCircle(String image) {
+  Widget buildLogoCircle(context, String image) {
     return Container(
       width: 45,
       height: 45,
       margin: EdgeInsets.symmetric(horizontal: 2.0),
-      decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all()),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(),
+        color: Theme.of(context).colorScheme.surfaceBright,
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(30),
         child: Image.asset(image, fit: BoxFit.cover),

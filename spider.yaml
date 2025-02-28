@@ -22,4 +22,7 @@ groups:
   - path: assets/logos
     class_name: Logos
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
+  - path: assets/education
+    class_name: Education
+    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
     

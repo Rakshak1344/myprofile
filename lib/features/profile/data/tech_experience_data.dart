@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:profile/features/socials/data/convertors/icon_data_convertor.dart';
+import 'package:profile/features/common/data/convertors/icon_data_convertor.dart';
 import 'package:profile/resources/resources.dart';
 
 part 'tech_experience_data.freezed.dart';

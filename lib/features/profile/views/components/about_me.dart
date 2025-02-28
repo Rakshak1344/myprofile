@@ -74,7 +74,13 @@ class AboutMe extends ResponsiveStatelessWidget {
       iconData: MdiIcons.bookEducation,
       description:
           'This is a brief description about the companies represented by the logos above. These companies have collaborated on various projects and have a strong presence in the industry.',
-      images: [],
+      navigateTo: AppRouteName.education,
+      images: [
+        Education.aims,
+        Education.acharya,
+        Education.svpuc,
+        Education.stMarysConvent
+      ],
     );
   }
 
