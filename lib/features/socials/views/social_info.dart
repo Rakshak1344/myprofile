@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/header/views/nav_button.dart';
 import 'package:profile/features/socials/data/models/social_info_data.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:profile/utils/url_launcher_extension.dart';
 
 class SocialInfo extends ResponsiveStatelessWidget {
   @override
@@ -26,12 +26,7 @@ class SocialInfo extends ResponsiveStatelessWidget {
         return NavButton(
           text: e.name,
           icon: e.iconData,
-          onPressed: () async {
-            final Uri _url = Uri.parse(e.url);
-            if (!await launchUrl(_url)) {
-              throw Exception('Could not launch $_url');
-            }
-          },
+          onPressed: e.url.launchURL,
           color: Colors.blue,
           iconColor: Colors.red,
         );

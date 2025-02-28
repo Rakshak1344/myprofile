@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/header/views/nav_button.dart';
-import 'package:profile/navigation/routes/app_route_name.dart';
-import 'package:profile/resources/resources.dart';
 
 class CareerInfo extends ResponsiveStatelessWidget {
   final String? navigateTo;

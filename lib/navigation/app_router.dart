@@ -19,7 +19,7 @@ Raw<GoRouter> goRouter(GoRouterRef ref) {
     refreshListenable: notifier,
     redirect: notifier.redirect,
     routes: AppRouter().routes(),
-    initialLocation: '/me',
+    initialLocation: '/projects',
   );
 }
 

@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/logos/
     - assets/education/
+    - assets/projects/
   #   - images/arcspace1.jpeg
   #   - images/arcspace2.jpeg
   #   - images/tasklight.png

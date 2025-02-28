@@ -25,4 +25,7 @@ groups:
   - path: assets/education
     class_name: Education
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
+  - path: assets/projects
+    class_name: Projects
+    types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
     

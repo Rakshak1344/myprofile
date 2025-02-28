@@ -44,14 +44,10 @@ class _AppNavigationRailState
   ];
 
   int get index {
-    var location = widget.state.uri.toString();
-    // Create new location without query parameters
-    if (location.contains('?')) {
-      location = location.substring(0, location.indexOf('?'));
-    }
+    var basePath = "/${widget.state.uri.pathSegments.first}";
 
     return routesNames.indexWhere(
-      (String route) => context.namedLocation(route) == location,
+      (String route) => context.namedLocation(route) == basePath,
     );
   }
 

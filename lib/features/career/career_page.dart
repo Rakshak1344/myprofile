@@ -15,11 +15,8 @@ class CareerPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 20),
-          TitleAndLine(
-            preTitle: "My",
-            title: "Experience",
-          ),
+          SizedBox(height: 32),
+          TitleAndLine(preTitle: "My", title: "Experience"),
           SizedBox(height: 40),
           ...buildCareer(CompanyData.myCompanyData, context),
           SizedBox(height: 20),

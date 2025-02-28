@@ -37,7 +37,7 @@ class _AppNavigationButtonsState
     IconData icon,
     String routeName,
   ) {
-    final currentPath = widget.state.uri.toString();
+    final currentPath = "/${widget.state.uri.pathSegments.first}";
     return TextButton.icon(
       onPressed: () {
         if (ResponsiveWidget.isSmallScreen(context)) {

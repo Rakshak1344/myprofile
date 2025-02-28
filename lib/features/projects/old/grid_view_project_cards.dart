@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import '../projects/desktop_view_cards.dart';
-import '../arch/view/responsive_view.dart';
+import 'package:profile/arch/view/responsive_view.dart';
+import 'package:profile/features/header/views/nav_button.dart';
+import 'package:profile/features/projects/old/desktop_view_cards.dart';
+
+
 import 'package:url_launcher/url_launcher.dart';
 
-import '../features/header/views/nav_button.dart';
 import 'mobile_view_card.dart';
 
 class GridViewProjectCards extends StatelessWidget {
