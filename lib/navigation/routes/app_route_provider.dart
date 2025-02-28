@@ -5,6 +5,7 @@ import 'package:profile/dialog/info_dialog.dart';
 import 'package:profile/features/app_shell.dart';
 import 'package:profile/features/career/career_page.dart';
 import 'package:profile/features/contact/contact_page.dart';
+import 'package:profile/features/projects/views/project_page.dart';
 import 'package:profile/features/projects/views/projects_page.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
 import 'package:profile/features/profile/views/profile_page.dart';
@@ -54,8 +55,7 @@ class AppRoutesProvider extends RouteProvider {
                     pageBuilder: (BuildContext context, GoRouterState state) {
                       final String slug =
                           state.pathParameters['slug'] ?? 'Unknown';
-                      return NoTransitionPage(
-                          child: Center(child: Text(state.uri.toString())));
+                      return NoTransitionPage(child: ProjectPage(slug: slug));
                     },
                   ),
                 ],
