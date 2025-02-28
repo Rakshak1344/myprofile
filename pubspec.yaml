@@ -41,6 +41,7 @@ dependencies:
   timeline_tile: ^2.0.0
   carousel_slider: ^5.0.0
   flutter_markdown: ^0.7.6+2
+  flutter_markdown_selectionarea: ^0.6.17+1
 
 dev_dependencies:
   flutter_test:

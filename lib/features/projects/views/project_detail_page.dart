@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -22,12 +21,12 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
 
   @override
   Widget buildMobile(BuildContext context) {
-    return buildProjectDetailPage();
+    return buildProjectDetailPage(context);
   }
 
   @override
   Widget buildTablet(BuildContext context) {
-    return buildProjectDetailPage();
+    return buildProjectDetailPage(context);
   }
 
   Widget buildProjectDetailDesktopPage(context) {
@@ -57,11 +56,23 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 HorizontalLine(),
-                Container(
-                  height: 400,
-                  width: width,
-                  child: Markdown(data: '''
-          # driftic (Drift Isolate Cache)
+                buildMarkdown()
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildMarkdown() {
+    return Container(
+      height: 400,
+      width: width,
+      child: SelectionArea(
+        child: Markdown(
+          data: '''
+# driftic (Drift Isolate Cache)
 
 A Flutter project for the drift isolate in-memory, and persistence databases.
 Having multi instances of databases table's data access at once.
@@ -89,22 +100,31 @@ Available Screens:
 
 - [x] Multi-Dynamic In-Memory Drift Isolate Based on user's interest.
 - [x] Multi Persistence Drift Isolate.
-          '''),
-                )
-              ],
-            ),
+        ''',
+          selectable: true,
+          styleSheet: MarkdownStyleSheet(
+            // h1: const TextStyle(fontSize: 24, color: Colors.blue),
+            code: TextStyle(fontSize: 14, backgroundColor: Colors.grey[100]),
+            codeblockPadding: EdgeInsets.all(8),
+            codeblockDecoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.grey[100],
+            ), // new end
           ),
-        ],
+        ),
       ),
     );
   }
 
-  Widget buildProjectDetailPage() {
+  Widget buildProjectDetailPage(context) {
     return SingleChildScrollView(
       child: Column(
         children: [
           SizedBox(height: 32),
-          buildBackButton(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 22.0),
+            child: buildBackButton(),
+          ),
           Container(
             width: width,
             margin: EdgeInsets.all(22),
@@ -114,7 +134,14 @@ Available Screens:
               children: [
                 buildCarousel(),
                 buildProjectDetails(true),
-                Center(child: Text(projectData.name)),
+                SizedBox(height: 55),
+                HorizontalLine(),
+                Text(
+                  "Tech and more",
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+                HorizontalLine(),
+                buildMarkdown(),
                 SizedBox(height: 22),
               ],
             ),
