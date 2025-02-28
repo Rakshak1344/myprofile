@@ -91,5 +91,10 @@ class TechExperienceData with _$TechExperienceData {
           experienceLevel: 'Intermediate',
           iconData: MdiIcons.materialDesign,
         ),
+        TechExperienceData(
+          name: 'Sentry',
+          experienceLevel: 'Intermediate',
+          assetUrl: Logos.sentry,
+        ),
       ];
 }

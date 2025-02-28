@@ -39,6 +39,8 @@ dependencies:
   collection: ^1.18.0
   package_info_plus: ^8.2.1
   timeline_tile: ^2.0.0
+  carousel_slider: ^5.0.0
+  flutter_markdown: ^0.7.6+2
 
 dev_dependencies:
   flutter_test:

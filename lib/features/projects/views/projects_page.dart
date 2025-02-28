@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/features/projects/data/models/project_data.dart';
+import 'package:profile/features/projects/views/widgets/playstore_button.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
-
-import 'package:profile/utils/url_launcher_extension.dart';
 
 class ProjectsPage extends ResponsiveStatelessWidget {
   const ProjectsPage({super.key});
@@ -48,7 +46,6 @@ class ProjectsPage extends ResponsiveStatelessWidget {
 
   Widget buildProjectCard(context, ProjectData p) {
     return Container(
-      height: 500,
       width: 300,
       padding: EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
@@ -64,19 +61,27 @@ class ProjectsPage extends ResponsiveStatelessWidget {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           Container(
-            height: 400,
+            height: 200,
             width: 200,
-            child: Image.asset(p.image, fit: BoxFit.contain),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: p.image.startsWith("https")
+                    ? Image.network(p.image, fit: BoxFit.cover)
+                    : Image.asset(p.image, fit: BoxFit.cover)
+                // Image.asset(p.image, fit: BoxFit.contain),
+                ),
           ),
+          SizedBox(height: 22),
           Row(
             children: [
               if (p.playStoreUrl != null) ...[
-                Expanded(child: buildPlayStoreButton(p.playStoreUrl, context)),
+                Expanded(child: PlaystoreButton(url: p.playStoreUrl!)),
                 SizedBox(width: 12),
               ],
               Expanded(child: buildReadMoreButton(p.slug, context)),
             ],
           ),
+          SizedBox(height: 22)
         ],
       ),
     );
@@ -95,17 +100,6 @@ class ProjectsPage extends ResponsiveStatelessWidget {
           pathParameters: {'slug': slug},
         );
       },
-    );
-  }
-
-  Widget buildPlayStoreButton(String? url, context) {
-    return OutlinedButton.icon(
-      label: Text("Playstore", style: Theme.of(context).textTheme.bodySmall),
-      icon: Icon(MdiIcons.googlePlay),
-      style: Theme.of(context).outlinedButtonTheme.style?.copyWith(
-            visualDensity: VisualDensity.compact,
-          ),
-      onPressed: url.launchURL,
     );
   }
 }
