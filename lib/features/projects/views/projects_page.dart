@@ -64,12 +64,9 @@ class ProjectsPage extends ResponsiveStatelessWidget {
             height: 200,
             width: 200,
             child: ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: p.image.startsWith("https")
-                    ? Image.network(p.image, fit: BoxFit.cover)
-                    : Image.asset(p.image, fit: BoxFit.cover)
-                // Image.asset(p.image, fit: BoxFit.contain),
-                ),
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset(p.image, fit: BoxFit.cover),
+            ),
           ),
           SizedBox(height: 22),
           Row(

@@ -158,8 +158,7 @@ Available Screens:
       height: 400,
       child: CarouselSlider.builder(
         itemCount: projectData.images.length,
-        itemBuilder: (context, i, _) =>
-            CachedNetworkImage(imageUrl: projectData.images[i],),
+        itemBuilder: (context, i, _) => Image.asset(projectData.images[i]),
         options: CarouselOptions(autoPlay: true, enlargeCenterPage: true),
       ),
     );
