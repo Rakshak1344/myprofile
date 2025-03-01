@@ -7,17 +7,17 @@ class MyName extends ResponsiveStatelessWidget {
 
   @override
   Widget buildDesktop(BuildContext context) {
-    return buildMyName(context, fontSize: MediaQuery.of(context).size.width * 0.06);
+    return buildMyName(context, fontSize: 100);
   }
 
   @override
   Widget buildMobile(BuildContext context) {
-    return buildMyName(context,fontSize: MediaQuery.of(context).size.height * 0.06);
+    return buildMyName(context,fontSize: 54);
   }
 
   @override
   Widget buildTablet(BuildContext context) {
-    return buildMyName(context, fontSize: MediaQuery.of(context).size.height * 0.06);
+    return buildMyName(context, fontSize: 80);
   }
 
   Widget buildMyName(context, {double? fontSize}) {

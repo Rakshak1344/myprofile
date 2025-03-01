@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
-import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
 import 'package:profile/features/projects/data/models/project_data.dart';
 import 'package:profile/features/projects/views/widgets/markdown_preview.dart';
@@ -51,9 +50,9 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                   ],
                 ),
                 SizedBox(height: 22),
-                ...buildContentTitle(context, "Tech and more"),
-                SizedBox(height: 22),
-                if(projectData.readmeUrl != null)...[
+                ...buildContentTitle(context, "More"),
+                if (projectData.readmeUrl != null) ...[
+                  SizedBox(height: 22),
                   ...buildContentTitle(context, "Readme.md"),
                   buildMarkdown(),
                 ],
@@ -68,7 +67,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
   List<Widget> buildContentTitle(context, String title) {
     return [
       HorizontalLine(),
-      Text(title, style: Theme.of(context).textTheme.headlineLarge),
+      Text(title, style: Theme.of(context).textTheme.titleLarge),
       HorizontalLine(),
     ];
   }
@@ -102,7 +101,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                 SizedBox(height: 55),
                 ...buildContentTitle(context, "Tech and more"),
                 SizedBox(height: 22),
-                if(projectData.readmeUrl != null)...[
+                if (projectData.readmeUrl != null) ...[
                   ...buildContentTitle(context, "Readme.md"),
                   buildMarkdown(),
                 ],
@@ -156,6 +155,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
   }
 
   Widget buildProjectDetails(bool shouldAddPadding) {
+    var context = AppConfig.navigatorKey.currentContext;
     return Container(
       padding: shouldAddPadding
           ? EdgeInsets.symmetric(horizontal: 22)
@@ -163,7 +163,11 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          TitleAndLine(title: projectData.name),
+          Text(
+            projectData.name,
+            style: Theme.of(context!).textTheme.displayMedium,
+            textAlign: TextAlign.center,
+          ),
           Text(projectData.description, textAlign: TextAlign.center),
           SizedBox(height: 12),
           PlaystoreButton(url: projectData.playStoreUrl!),

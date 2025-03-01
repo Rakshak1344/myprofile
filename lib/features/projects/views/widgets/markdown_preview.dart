@@ -33,7 +33,7 @@ class _MarkdownPreviewState extends ResponsiveConsumerState<MarkdownPreview> {
   Future<void> _fetchMarkdown() async {
     if (widget.url == null) {
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("Invalid Url")));
+          .showSnackBar(SnackBar(content: Text("Invalid Readme Url")));
       return;
     }
 
@@ -52,7 +52,7 @@ class _MarkdownPreviewState extends ResponsiveConsumerState<MarkdownPreview> {
       });
     } catch (e) {
       setState(() {
-        _markdownData = "Error loading README.md: $e";
+        _markdownData = "Error loading README.md";
         _isLoading = false;
       });
     }
