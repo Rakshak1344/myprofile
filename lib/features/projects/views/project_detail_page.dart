@@ -146,18 +146,22 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
   }
 
   Widget buildCarousel() {
+    if (projectData.images == null) {
+      return SizedBox.shrink();
+    }
+
     return Container(
       width: 300,
       height: 400,
       child: CarouselSlider.builder(
         disableGesture: true,
-        itemCount: projectData.images.length,
-        itemBuilder: (context, i, _) => Image.asset(projectData.images[i]),
+        itemCount: projectData.images?.length,
+        itemBuilder: (context, i, _) => Image.asset(projectData.images![i]),
         options: CarouselOptions(
-          enableInfiniteScroll: projectData.images.length > 1,
-          autoPlay: projectData.images.length > 1,
+          enableInfiniteScroll: projectData.images!.length > 1,
+          autoPlay: projectData.images!.length > 1,
           enlargeCenterPage: true,
-          scrollPhysics: projectData.images.length > 1
+          scrollPhysics: projectData.images!.length > 1
               ? AlwaysScrollableScrollPhysics()
               : NeverScrollableScrollPhysics(),
         ),
@@ -179,7 +183,10 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
             style: Theme.of(context!).textTheme.displayMedium,
             textAlign: TextAlign.center,
           ),
-          Text(projectData.description, textAlign: TextAlign.center),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(projectData.description, textAlign: TextAlign.center),
+          ),
           SizedBox(height: 12),
           buildButtons(),
           SizedBox(height: 12),

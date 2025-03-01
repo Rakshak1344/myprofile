@@ -16,8 +16,8 @@ class ProjectData with _$ProjectData {
     required String name,
     required String slug,
     required String description,
-    required String image,
-    required List<String> images,
+    String? image,
+    List<String>? images,
     @IconDataConverter() List<IconData>? techIcons,
     List<String>? techIconAssets,
     String? companyLogo,
@@ -37,6 +37,21 @@ class ProjectData with _$ProjectData {
         _indipeConsumer,
         _tezsure,
       ];
+
+  static List<ProjectData> get experiments => <ProjectData>[
+        driftIsolate,
+      ];
+
+  static ProjectData driftIsolate = ProjectData(
+    name: "Multi Drift Isolate",
+    slug: "multi_drift_isolate",
+    description:
+        "Stream Data at once to UI through Multi-DriftIsolate-Database",
+    gitHubUrl: "https://github.com/Rakshak1344/Driftic",
+    readmeContentOrLink:
+        "https://raw.githubusercontent.com/Rakshak1344/Driftic/refs/heads/dev/README.md",
+    techIconAssets: [TechImage.flutter],
+  );
 
   static ProjectData _indipeBusiness = ProjectData(
     companyLogo: Logos.indipe,
@@ -83,7 +98,8 @@ class ProjectData with _$ProjectData {
     name: "Tezster dart",
     slug: "tezsure",
     image: Logos.tezsure,
-    description: "Tezster dart",
+    description:
+        "Tezster_dart is a toolkit that helps developers create applications on the Tezos blockchain using Flutter. It offers features like wallet management, balance checks, and transaction processing, simplifying the development of blockchain-based apps",
     readmeContentOrLink:
         'https://raw.githubusercontent.com/Tezsure/Tezster_dart/refs/heads/master/README.md',
     gitHubUrl: 'https://github.com/Tezsure/tezster_dart',
