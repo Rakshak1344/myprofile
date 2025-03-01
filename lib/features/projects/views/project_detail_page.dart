@@ -5,7 +5,7 @@ import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
 import 'package:profile/features/projects/data/models/project_data.dart';
 import 'package:profile/features/projects/views/widgets/markdown_preview.dart';
-import 'package:profile/features/projects/views/widgets/playstore_button.dart';
+import 'package:profile/features/projects/views/widgets/url_button.dart';
 
 class ProjectDetailPage extends ResponsiveStatelessWidget {
   final ProjectData projectData;
@@ -150,9 +150,17 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
       width: 300,
       height: 400,
       child: CarouselSlider.builder(
+        disableGesture: true,
         itemCount: projectData.images.length,
         itemBuilder: (context, i, _) => Image.asset(projectData.images[i]),
-        options: CarouselOptions(autoPlay: true, enlargeCenterPage: true),
+        options: CarouselOptions(
+          enableInfiniteScroll: projectData.images.length > 1,
+          autoPlay: projectData.images.length > 1,
+          enlargeCenterPage: true,
+          scrollPhysics: projectData.images.length > 1
+              ? AlwaysScrollableScrollPhysics()
+              : NeverScrollableScrollPhysics(),
+        ),
       ),
     );
   }
@@ -173,11 +181,31 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
           ),
           Text(projectData.description, textAlign: TextAlign.center),
           SizedBox(height: 12),
-          PlaystoreButton(url: projectData.playStoreUrl!),
+          buildButtons(),
           SizedBox(height: 12),
           ...techUsed(),
         ],
       ),
+    );
+  }
+
+  Widget buildButtons() {
+    var urls = [
+      projectData.playStoreUrl,
+      projectData.gitHubUrl,
+      projectData.pubDevUrl,
+    ];
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: urls.map((url) {
+        if (url == null) return SizedBox.shrink();
+
+        return Padding(
+          padding: const EdgeInsets.only(right: 8.0),
+          child: UrlButton(url: url),
+        );
+      }).toList(),
     );
   }
 

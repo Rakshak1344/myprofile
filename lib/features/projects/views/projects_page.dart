@@ -4,7 +4,7 @@ import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/features/projects/data/models/project_data.dart';
-import 'package:profile/features/projects/views/widgets/playstore_button.dart';
+import 'package:profile/features/projects/views/widgets/url_button.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
 
 class ProjectsPage extends ResponsiveStatelessWidget {
@@ -72,7 +72,11 @@ class ProjectsPage extends ResponsiveStatelessWidget {
           Row(
             children: [
               if (p.playStoreUrl != null) ...[
-                Expanded(child: PlaystoreButton(url: p.playStoreUrl!)),
+                Expanded(child: UrlButton(url: p.playStoreUrl!)),
+                SizedBox(width: 12),
+              ],
+              if (p.pubDevUrl != null) ...[
+                Expanded(child: UrlButton(url: p.pubDevUrl!)),
                 SizedBox(width: 12),
               ],
               Expanded(child: buildReadMoreButton(p.slug, context)),
