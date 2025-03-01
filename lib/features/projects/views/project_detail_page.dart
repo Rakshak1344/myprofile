@@ -5,6 +5,7 @@ import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
 import 'package:profile/features/projects/data/models/project_data.dart';
+import 'package:profile/features/projects/views/widgets/markdown_preview.dart';
 import 'package:profile/features/projects/views/widgets/playstore_button.dart';
 
 class ProjectDetailPage extends ResponsiveStatelessWidget {
@@ -50,13 +51,12 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                   ],
                 ),
                 SizedBox(height: 22),
-                HorizontalLine(),
-                Text(
-                  "Tech and more",
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                HorizontalLine(),
-                buildMarkdown()
+                ...buildContentTitle(context, "Tech and more"),
+                SizedBox(height: 22),
+                if(projectData.readmeUrl != null)...[
+                  ...buildContentTitle(context, "Readme.md"),
+                  buildMarkdown(),
+                ],
               ],
             ),
           ),
@@ -65,54 +65,19 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     );
   }
 
+  List<Widget> buildContentTitle(context, String title) {
+    return [
+      HorizontalLine(),
+      Text(title, style: Theme.of(context).textTheme.headlineLarge),
+      HorizontalLine(),
+    ];
+  }
+
   Widget buildMarkdown() {
     return Container(
       height: 400,
       width: width,
-      child: SelectionArea(
-        child: Markdown(
-          data: '''
-# driftic (Drift Isolate Cache)
-
-A Flutter project for the drift isolate in-memory, and persistence databases.
-Having multi instances of databases table's data access at once.
-
-## Getting Started
-
-Use FVM if you have or quickly install FVM based on you OS via this [link](https://fvm.app/documentation/getting-started/installation)
-
-Using force will pull the required version for the project.
-```bash
-fvm use --force
-```
-
-Then, run the following command to get the required dependencies, and gen files for the project.
-```bash
-chmod +x ./build.sh
-```
-
-```bash
-./build.sh
-```
-
-
-Available Screens:
-
-- [x] Multi-Dynamic In-Memory Drift Isolate Based on user's interest.
-- [x] Multi Persistence Drift Isolate.
-        ''',
-          selectable: true,
-          styleSheet: MarkdownStyleSheet(
-            // h1: const TextStyle(fontSize: 24, color: Colors.blue),
-            code: TextStyle(fontSize: 14, backgroundColor: Colors.grey[100]),
-            codeblockPadding: EdgeInsets.all(8),
-            codeblockDecoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[100],
-            ), // new end
-          ),
-        ),
-      ),
+      child: MarkdownPreview(url: projectData.readmeUrl),
     );
   }
 
@@ -135,13 +100,12 @@ Available Screens:
                 buildCarousel(),
                 buildProjectDetails(true),
                 SizedBox(height: 55),
-                HorizontalLine(),
-                Text(
-                  "Tech and more",
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                HorizontalLine(),
-                buildMarkdown(),
+                ...buildContentTitle(context, "Tech and more"),
+                SizedBox(height: 22),
+                if(projectData.readmeUrl != null)...[
+                  ...buildContentTitle(context, "Readme.md"),
+                  buildMarkdown(),
+                ],
                 SizedBox(height: 22),
               ],
             ),

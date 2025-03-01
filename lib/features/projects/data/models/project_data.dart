@@ -41,6 +41,7 @@ class ProjectData with _$ProjectData {
               "A business app for small and medium businesses to manage their online payments which were made by the customers",
           playStoreUrl:
               'https://play.google.com/store/apps/details?id=in.indipe.merchant&pcampaignid=web_share',
+          readmeUrl: "https://raw.githubusercontent.com/Rakshak1344/Driftic/refs/heads/dev/README.md",
           images: indipeBusiness,
           techIcons: [MdiIcons.laravel, MdiIcons.firebase],
           techIconAssets: [
@@ -62,6 +63,7 @@ class ProjectData with _$ProjectData {
               "A business app for small and medium businesses to manage their online payments which were made by the customers",
           playStoreUrl:
               'https://play.google.com/store/apps/details?id=in.indipe.merchant&pcampaignid=web_share',
+          readmeUrl: "https://raw.githubusercontent.com/Rakshak1344/Driftic/refs/heads/dev/README.md",
           images: indipeConsumer,
           techIcons: [MdiIcons.laravel, MdiIcons.firebase],
           techIconAssets: [
