@@ -73,7 +73,7 @@ class AboutMe extends ResponsiveStatelessWidget {
           "BCA - Bachelor of Computer Applications\nMCA - Master of Computer Applications",
       iconData: MdiIcons.bookEducation,
       description:
-          'This is a brief description about the companies represented by the logos above. These companies have collaborated on various projects and have a strong presence in the industry.',
+          'My academic background has equipped me with a strong foundation in software engineering, system design, and cloud technologies, enabling me to build high-performance applications that drive innovation.',
       navigateTo: AppRouteName.education,
       images: [
         Education.aims,
@@ -96,7 +96,7 @@ class AboutMe extends ResponsiveStatelessWidget {
       subtitle: "3+ Years\nSenior Developer",
       iconData: MdiIcons.codeTags,
       description:
-          'This is a brief description about the companies represented by the logos above. These companies have collaborated on various projects and have a strong presence in the industry.',
+          'I thrive on building technology end-to-end, with a deep passion for mobile and backend development. My expertise lies in crafting scalable, high-performance applications that deliver seamless user experiences.',
       images: logos,
       navigateTo: AppRouteName.career,
     );

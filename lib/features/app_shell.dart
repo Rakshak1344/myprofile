@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:profile/arch/config/app_config.dart';
+import 'package:profile/arch/view/responsive_view.dart';
 import 'package:profile/arch/view/riverpod_widgets/responsive_consumer_stateful_widget.dart';
 import 'package:profile/features/app_navigation_buttons.dart';
+import 'package:profile/features/app_popup_menu_button.dart';
 import 'package:profile/features/profile/views/widgets/navigation_rail.dart';
 import 'package:profile/features/profile/views/widgets/r_g_initial.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
@@ -38,14 +42,6 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
   Widget buildMobile(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: buildMobileAppBar(),
-      endDrawer: Drawer(
-        child: Column(
-          children: [
-            Text("Drawer"),
-            AppNavigationButtons(state: widget.state),
-          ],
-        ),
-      ),
       body: widget.child,
     );
   }
@@ -67,6 +63,33 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
       elevation: 0.0,
       automaticallyImplyLeading: false,
       title: RGInitial(),
+      actions: [AppPopupMenuButton(state: widget.state)],
+    );
+  }
+
+  Widget buildNavButton(
+    String label,
+    IconData icon,
+    String routeName,
+  ) {
+    final currentPath = "/${widget.state.uri.pathSegments.first}";
+    return TextButton.icon(
+      onPressed: () {
+        if (ResponsiveWidget.isSmallScreen(context)) {
+          AppConfig.navigatorKey.currentContext?.pop();
+        }
+
+        AppConfig.navigatorKey.currentContext?.goNamed(routeName);
+      },
+      style: TextButton.styleFrom(
+        visualDensity: VisualDensity.compact,
+        shape: const StadiumBorder(),
+        side: currentPath == '/$routeName'
+            ? const BorderSide(color: Colors.black)
+            : null,
+      ),
+      label: Text(label),
+      icon: Icon(icon),
     );
   }
 
