@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:profile/arch/view/responsive_view.dart';
-import 'package:profile/features/header/views/nav_button.dart';
+import 'package:profile/features/common/widgets/nav_button.dart';
 import 'package:profile/features/projects/old/desktop_view_cards.dart';
 
 

@@ -6,7 +6,9 @@ import 'package:profile/features/projects/views/widgets/readmore_button.dart';
 import 'package:profile/features/projects/views/widgets/url_button.dart';
 
 class ProjectsListWidget extends ResponsiveStatelessWidget {
-  const ProjectsListWidget({super.key});
+  final bool isPreview;
+
+  const ProjectsListWidget({super.key, this.isPreview = false});
 
   @override
   Widget buildDesktop(BuildContext context) {
@@ -24,15 +26,21 @@ class ProjectsListWidget extends ResponsiveStatelessWidget {
   }
 
   Widget buildProjectsListWidget(context) {
+    var projects =
+        isPreview ? ProjectData.projects.sublist(0, 2) : ProjectData.projects;
+
     return Column(
       children: [
-        TitleAndLine(title: "Projects", preTitle: "Worked on these"),
+        TitleAndLine(
+          title: "Projects",
+          preTitle: isPreview ? "Recent" : "Worked on these",
+        ),
         SizedBox(height: 20),
         Wrap(
           runSpacing: 20,
           spacing: 20,
-          children: List.generate(ProjectData.projects.length, (i) {
-            return buildProjectCard(context, ProjectData.projects[i]);
+          children: List.generate(projects.length, (i) {
+            return buildProjectCard(context, projects[i]);
           }),
         ),
       ],

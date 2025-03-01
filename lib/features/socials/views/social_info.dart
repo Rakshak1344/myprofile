@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
-import 'package:profile/features/header/views/nav_button.dart';
+import 'package:profile/features/common/widgets/nav_button.dart';
 import 'package:profile/features/socials/data/models/social_info_data.dart';
 import 'package:profile/utils/url_launcher_extension.dart';
 

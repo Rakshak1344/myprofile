@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:profile/arch/view/riverpod_widgets/responsive_consumer_stateful_widget.dart';
-import 'package:profile/features/career/career_page.dart';
 import 'package:profile/features/contact/contact_page.dart';
 import 'package:profile/features/profile/views/components/about_me.dart';
 import 'package:profile/features/profile/views/components/explore_my_experience.dart';
 import 'package:profile/features/profile/views/widgets/built_responsive_flutter.dart';
-import 'package:profile/features/profile/views/widgets/career_info.dart';
 import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
+import 'package:profile/features/projects/views/widgets/projects_list_widget.dart';
 import 'components/profile_info.dart';
 
 class ProfilePage extends ResponsiveConsumerStatefulWidget {
@@ -43,19 +42,23 @@ class _ProfilePageState extends ResponsiveConsumerState<ProfilePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            // NavHeader(),
-
             ProfileInfo(),
-            SizedBox(height: 20),
-            AboutMe(),
+
             SizedBox(height: 40),
-            // SizedBox(height: 20),
-            // CareerPage(),
+            AboutMe(),
+
+            SizedBox(height: 40),
+            ProjectsListWidget(isPreview: true),
+
+            SizedBox(height: 40),
             ExploreMyExperience(),
+
             SizedBox(height: 20),
             ContactPage(),
+
             SizedBox(height: 20),
             HorizontalLine(),
+
             SizedBox(height: 20),
             BuiltResponsiveFlutter(),
             // ProjectHeaderName(),
