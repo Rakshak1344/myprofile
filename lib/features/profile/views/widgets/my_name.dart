@@ -23,8 +23,9 @@ class MyName extends ResponsiveStatelessWidget {
   Widget buildMyName(context, {double? fontSize}) {
     return AnimatedContainer(
       padding: EdgeInsets.all(10),
-      duration: Duration(milliseconds: 200),
+      duration: Duration(milliseconds: 50),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(

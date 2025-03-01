@@ -8,11 +8,11 @@ import 'package:profile/utils/url_launcher_extension.dart';
 
 class MarkdownPreview extends ResponsiveConsumerStatefulWidget {
   final String? title;
-  final String? url;
+  final String? readmeContentOrLink;
 
   const MarkdownPreview({
     Key? key,
-    required this.url,
+    required this.readmeContentOrLink,
     this.title = "Readme.md",
   }) : super(key: key);
 
@@ -31,14 +31,25 @@ class _MarkdownPreviewState extends ResponsiveConsumerState<MarkdownPreview> {
   }
 
   Future<void> _fetchMarkdown() async {
-    if (widget.url == null) {
+    if (widget.readmeContentOrLink == null) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text("Invalid Readme Url")));
+      setState(() => _isLoading = false);
+      return;
+    }
+    var isNetworkMarkdown = widget.readmeContentOrLink!.startsWith('https') ||
+        widget.readmeContentOrLink!.startsWith('http');
+
+    if (!isNetworkMarkdown) {
+      _markdownData =
+          widget.readmeContentOrLink; // Sets the hardcoded markdown content.
+      setState(() => _isLoading = false);
       return;
     }
 
     try {
-      final response = await http.get(Uri.parse(widget.url!));
+      setState(() => _isLoading = true);
+      final response = await http.get(Uri.parse(widget.readmeContentOrLink!));
       if (response.statusCode == 200) {
         setState(() {
           _markdownData = response.body;

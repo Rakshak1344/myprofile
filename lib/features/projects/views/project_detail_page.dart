@@ -50,10 +50,8 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                   ],
                 ),
                 SizedBox(height: 22),
-                ...buildContentTitle(context, "More"),
-                if (projectData.readmeUrl != null) ...[
-                  SizedBox(height: 22),
-                  ...buildContentTitle(context, "Readme.md"),
+                if (projectData.readmeContentOrLink != null) ...[
+                  ...buildContentTitle(context, "More on ${projectData.name}"),
                   buildMarkdown(),
                 ],
               ],
@@ -76,7 +74,8 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     return Container(
       height: 400,
       width: width,
-      child: MarkdownPreview(url: projectData.readmeUrl),
+      child:
+          MarkdownPreview(readmeContentOrLink: projectData.readmeContentOrLink),
     );
   }
 
@@ -99,13 +98,17 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
                 buildCarousel(),
                 buildProjectDetails(true),
                 SizedBox(height: 55),
-                ...buildContentTitle(context, "Tech and more"),
-                SizedBox(height: 22),
-                if (projectData.readmeUrl != null) ...[
-                  ...buildContentTitle(context, "Readme.md"),
+                if (projectData.readmeContentOrLink != null) ...[
+                  ...buildContentTitle(context, "More on ${projectData.name}"),
                   buildMarkdown(),
                 ],
-                SizedBox(height: 22),
+                // ...buildContentTitle(context, "More on ${projectData.name}"),
+                // SizedBox(height: 22),
+                // if (projectData.readmeContentOrLink != null) ...[
+                //   ...buildContentTitle(context, "Architectural"),
+                //   buildMarkdown(),
+                // ],
+                // SizedBox(height: 22),
               ],
             ),
           ),
