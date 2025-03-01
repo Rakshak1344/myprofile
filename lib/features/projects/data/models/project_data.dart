@@ -47,7 +47,7 @@ class ProjectData with _$ProjectData {
         "The IndiPe Business app is a comprehensive payment solution tailored for merchants in India, offering a one-stop platform to manage transactions efficiently.",
     playStoreUrl:
         'https://play.google.com/store/apps/details?id=in.indipe.merchant&pcampaignid=web_share',
-    readmeContentOrLink: ReadmeData.flutterArchitecture,
+    readmeContentOrLink: '${ReadmeData.indipeBusiness}\n\n${ReadmeData.flutterArchitecture}',
     // readmeContentOrLink:
     //     "https://raw.githubusercontent.com/Rakshak1344/Driftic/refs/heads/dev/README.md",
     images: ProjectAppScreenshotList.indipeBusinessScreenshots,
@@ -66,7 +66,7 @@ class ProjectData with _$ProjectData {
         "Indipe is a secure and user-friendly UPI app designed for seamless payments, and to help users take control of their finances. It seamlessly combines budgeting, investment, and payment features to enhance financial well-being and mindful spending.",
     playStoreUrl:
         'https://play.google.com/store/apps/details?id=in.indipe.merchant&pcampaignid=web_share',
-    readmeContentOrLink: ReadmeData.flutterArchitecture,
+    readmeContentOrLink: '${ReadmeData.indipeConsumer}\n\n${ReadmeData.flutterArchitecture}',
     images: ProjectAppScreenshotList.indipeConsumerScreenshots,
     techIcons: [MdiIcons.laravel, MdiIcons.firebase],
     techIconAssets: [TechImage.flutter, TechImage.pgsql, TechImage.sentry],

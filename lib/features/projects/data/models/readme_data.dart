@@ -1,4 +1,57 @@
 class ReadmeData {
+  static const String indipeBusiness = '''
+# My Contribution
+
+## 📱 Key Features I Worked On:
+
+### 🏪 Business Transactions & Payments
+- **Simplified Onboarding**: Developed an intuitive **onboarding process** by collecting minimal necessary data for **faster merchant registration**.
+- **Integrated KYC for Onboarding Gullak**: Enabled secure **Know Your Customer (KYC) verification** for users onboarding to **Gullak**.
+- **Integrated Gullak**: Successfully integrated **Gullak**, providing merchants with enhanced financial management tools.
+- **Transaction Recording**: Implemented **seamless tracking of all consumer payments**, ensuring accurate financial records for merchants.
+
+### 🌐 User Experience Enhancements
+- **Reusable Permission Wrapper**: Developed a **reusable permission handler** that ensures permissions are requested **only when required by a specific page**.
+- **Language Selection**: Implemented **multi-language support**, allowing users to choose their preferred language for a localized experience.
+- **Automated Alerts & Notifications**: Integrated **FCM notifications** for important business updates.
+
+### 🔐 Security & Compliance
+- **Secure Authentication**: Integrated **Google Sign-In and OTP-based authentication** using **Firebase Authentication**.
+- **Sentry Integration for Error Monitoring**: Ensured **real-time issue tracking**, reducing production downtime.
+
+### 🚀 Developemnt
+- **Trunk-Based Development Workflow**: Followed **Trunk-Based Development** to enable faster feature releases with high stability.
+- **Custom Git Hooks for Code Quality**: Enforced **pre-commit and post-commit hooks** to maintain coding standards and automate essential checks.
+  ''';
+
+  static const String indipeConsumer = '''
+# My Contribution
+
+## 📱 Key Features I Worked On:
+
+### 📊 Simplified Budgeting
+- Implemented a structured state management approach with **Riverpod**, ensuring smooth real-time tracking and categorization of expenses across various segments like travel, food, shopping, and entertainment.
+
+### 💰 Gullakk - Your Investment Companion
+- Engineered a **secure investment module** using clean architecture principles, enabling users to transform savings into meaningful investments with flexible options, potentially earning up to **12% per annum**.
+
+### 🔄 Comprehensive Financial Solution
+- Designed a **modular monorepo architecture** with **Melos**, ensuring seamless integration of income, savings, investments, and payments under a single ecosystem, making financial management effortless.
+
+### 💳 Streamlined Payments
+- Integrated **FCM for authentication & notifications**, enabling real-time updates on payments and transactions.
+- Contributed to the development of upcoming features like **utility bill payments, recharges, and money transfers**, ensuring a **secure** and **frictionless** payment experience.
+
+### 🌍 Lifestyle Adaptability
+- Architected the **offline-first experience** using **Hive & Isar**, ensuring users could access financial data even with limited connectivity.
+- Designed a **custom theming system** with **Material 3**, maintaining a consistent UI/UX across different devices and screen sizes.
+
+## 📊 Data-Driven Decisions
+- Implemented **Sentry for performance monitoring and bug tracking**, ensuring production stability.
+- Integrated **real-time analytics** via **Mixpanel & WebEngage**, allowing data-driven product decisions for an enhanced user experience.
+
+''';
+
   static const String flutterArchitecture = '''
 # 🚀 Architected Features
 
