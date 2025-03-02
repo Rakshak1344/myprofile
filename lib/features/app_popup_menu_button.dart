@@ -1,10 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:profile/arch/config/app_config.dart';
-import 'package:profile/arch/view/responsive_view.dart';
 import 'package:profile/navigation/routes/app_route_name.dart';
 
 class AppPopupMenuButton extends StatelessWidget {
@@ -14,96 +10,61 @@ class AppPopupMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton(
-      onSelected: (data) {
-        log(data);
-      },
-      icon: buildPopupButtonIcon(context),
-      itemBuilder: (context) {
-        return buildNavButtons();
-        // return routesNames.sublist(1).map((String route) {
-        //   return PopupMenuItem(
-        //     child:
-        //         // buildNavButton(
-        //         //   route[0].toUpperCase() + route.substring(1),
-        //         //   Icons.computer,
-        //         //   AppRouteName.career,
-        //         // ),
-        //         ListTile(
-        //       iconColor: Theme.of(context).colorScheme.primary,
-        //       title: Text(route[0].toUpperCase() + route.substring(1)),
-        //       onTap: () {
-        //         context.pop();
-        //         context.goNamed(route);
-        //       },
-        //     ),
-        //   );
-        // }).toList();
-      },
+    return PopupMenuButton<MenuItemData>(
+      icon: Icon(
+        MdiIcons.hamburger,
+        color: Theme.of(context).colorScheme.primary,
+      ),
+      itemBuilder: (context) => MenuItemData.menuItems.map((item) {
+        final currentPath = "/${state.uri.pathSegments.first}";
+        final isSelected = currentPath == '/${item.route}';
+
+        return PopupMenuItem<MenuItemData>(
+          onTap: () => context.goNamed(item.route),
+          value: item,
+          child: Container(
+            decoration: BoxDecoration(
+              border: isSelected ? Border.all(width: 2) : null,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: Row(
+              children: [
+                Icon(
+                  item.icon,
+                  color:
+                      isSelected ? Theme.of(context).colorScheme.primary : null,
+                ),
+                const SizedBox(width: 10),
+                Text(item.label),
+              ],
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
+}
 
-  Icon buildPopupButtonIcon(BuildContext context) {
-    return Icon(
-      MdiIcons.hamburger,
-      color: Theme.of(context).colorScheme.primary,
-    );
-  }
+class MenuItemData {
+  final String label;
+  final IconData icon;
+  final String route;
 
-  PopupMenuItem buildNavButton(
-    String label,
-    IconData icon,
-    String routeName,
-  ) {
-    final currentPath = "/${state.uri.pathSegments.first}";
-    return PopupMenuItem(
-      child: TextButton.icon(
-        onPressed: () {
-          var context = AppConfig.navigatorKey.currentContext;
-          if (ResponsiveWidget.isSmallScreen(context!)) {
-            context.pop();
-          }
+  MenuItemData({required this.label, required this.icon, required this.route});
 
-          context.goNamed(routeName);
-        },
-        style: TextButton.styleFrom(
-          visualDensity: VisualDensity.compact,
-          shape: const StadiumBorder(),
-          side: currentPath == '/$routeName'
-              ? const BorderSide(color: Colors.black)
-              : null,
-        ),
-        label: Text(label),
-        icon: Icon(icon),
-      ),
-    );
-  }
-
-  List<PopupMenuEntry> buildNavButtons() {
-    return [
-      buildNavButton(
-        "Career",
-        Icons.computer,
-        AppRouteName.career,
-      ),
-      // const SizedBox(height: 4),
-      buildNavButton(
-        "Projects",
-        Icons.code,
-        AppRouteName.projects,
-      ),
-      // const SizedBox(height: 4),
-      buildNavButton(
-        "Education",
-        Icons.star_border_rounded,
-        AppRouteName.education,
-      ),
-      // const SizedBox(height: 4),
-      buildNavButton(
-        "Contact",
-        Icons.email_outlined,
-        AppRouteName.contact,
-      ),
-    ];
-  }
+  static List<MenuItemData> menuItems = [
+    MenuItemData(
+        label: "Career", icon: Icons.computer, route: AppRouteName.career),
+    MenuItemData(
+        label: "Projects", icon: Icons.code, route: AppRouteName.projects),
+    MenuItemData(
+        label: "Education",
+        icon: Icons.star_border_rounded,
+        route: AppRouteName.education),
+    MenuItemData(
+        label: "Contact",
+        icon: Icons.email_outlined,
+        route: AppRouteName.contact),
+  ];
 }
