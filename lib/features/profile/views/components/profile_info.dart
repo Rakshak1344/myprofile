@@ -72,7 +72,7 @@ class ProfileInfo extends ResponsiveStatelessWidget {
 
   Widget designation(context) {
     return Text(
-      "A Full Stack Mobile Developer",
+      "Full Stack Mobile Developer",
       softWrap: true,
       textScaler: TextScaler.linear(1.5),
       textAlign: TextAlign.center,

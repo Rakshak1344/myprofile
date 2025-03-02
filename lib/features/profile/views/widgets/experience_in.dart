@@ -74,7 +74,7 @@ class ExperienceIn extends ResponsiveStatelessWidget {
     );
   }
 
-  List<String> text = [
+  final List<String> text = [
     "Flutter.",
     "Material UI.",
     "JavaScript.",
@@ -92,8 +92,6 @@ class ExperienceIn extends ResponsiveStatelessWidget {
   ];
 
   AnimatedText animatedText(context, String text) {
-    // RotateAnimatedText
-
     return TypewriterAnimatedText(
       text,
       textAlign: TextAlign.center,
