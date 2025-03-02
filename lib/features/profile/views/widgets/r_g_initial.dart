@@ -48,7 +48,7 @@ class RGInitial extends ResponsiveStatelessWidget {
             width: 5,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
         ],

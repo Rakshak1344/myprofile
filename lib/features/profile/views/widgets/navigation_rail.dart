@@ -54,6 +54,16 @@ class _AppNavigationRailState
     return NavigationRail(
       extended: false,
       selectedIndex: index,
+      selectedIconTheme: IconThemeData(
+        color: Theme.of(context).colorScheme.primary,
+      ),
+      labelType: NavigationRailLabelType.selected,
+      indicatorColor: Theme.of(context).colorScheme.secondaryContainer,
+      indicatorShape: ShapeBorder.lerp(
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        1,
+      ),
       destinations: destinations(),
       leading: buildLeading(),
       onDestinationSelected: (int index) {

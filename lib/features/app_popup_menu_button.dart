@@ -23,9 +23,11 @@ class AppPopupMenuButton extends StatelessWidget {
           onTap: () => context.goNamed(item.route),
           value: item,
           child: Container(
+
             decoration: BoxDecoration(
               border: isSelected ? Border.all(width: 2) : null,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(32),
+
             ),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: Row(

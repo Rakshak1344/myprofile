@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 
 class ExperienceIn extends ResponsiveStatelessWidget {
-  const ExperienceIn({super.key});
+  ExperienceIn({super.key});
 
   @override
   Widget buildDesktop(BuildContext context) {
@@ -36,34 +36,71 @@ class ExperienceIn extends ResponsiveStatelessWidget {
           SizedBox(
             height: 100,
             width: 120,
-            child: RotateAnimatedTextKit(
+            child: Center(
+              child: AnimatedTextKit(
                 totalRepeatCount: 10,
-                text: [
-                  "Flutter.",
-                  "Material UI.",
-                  "JavaScript.",
-                  "Node.js.",
-                  "MongoDB Atlas.",
-                  "Firebase.",
-                  "Laravel.",
-                  "PostgreSQL.",
-                  "Linux.",
-                  "Google Maps API.",
-                  "AWS S3.",
-                  "AWS EC2",
-                  "Heroku",
-                  "AdobeXD"
-                ],
-                textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.red,
-                    ),
-                textAlign: TextAlign.center,
-                alignment: AlignmentDirectional.center // or Alignment.topLeft
-                ),
+                isRepeatingAnimation: true,
+                repeatForever: true,
+                animatedTexts:
+                    text.map((e) => animatedText(context, e)).toList(),
+
+                // text: [
+                //   "Flutter.",
+                //   "Material UI.",
+                //   "JavaScript.",
+                //   "Node.js.",
+                //   "MongoDB Atlas.",
+                //   "Firebase.",
+                //   "Laravel.",
+                //   "PostgreSQL.",
+                //   "Linux.",
+                //   "Google Maps API.",
+                //   "AWS S3.",
+                //   "AWS EC2",
+                //   "Heroku",
+                //   "AdobeXD"
+                // ],
+                // textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+                //       fontWeight: FontWeight.w600,
+                //       color: Theme.of(context).colorScheme.primary,
+                //     ),
+                // textAlign: TextAlign.center,
+                // alignment: AlignmentDirectional.center // or Alignment.topLeft
+              ),
+            ),
           ),
         ],
       ),
+    );
+  }
+
+  List<String> text = [
+    "Flutter.",
+    "Material UI.",
+    "JavaScript.",
+    "Node.js.",
+    "MongoDB Atlas.",
+    "Firebase.",
+    "Laravel.",
+    "PostgreSQL.",
+    "Linux.",
+    "Google Maps API.",
+    "AWS S3.",
+    "AWS EC2.",
+    "Heroku.",
+    "AdobeXD."
+  ];
+
+  AnimatedText animatedText(context, String text) {
+    // RotateAnimatedText
+
+    return TypewriterAnimatedText(
+      text,
+      textAlign: TextAlign.center,
+      textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w600,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
     );
   }
 }

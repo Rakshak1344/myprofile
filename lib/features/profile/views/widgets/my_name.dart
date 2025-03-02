@@ -12,7 +12,7 @@ class MyName extends ResponsiveStatelessWidget {
 
   @override
   Widget buildMobile(BuildContext context) {
-    return buildMyName(context,fontSize: 54);
+    return buildMyName(context, fontSize: 54);
   }
 
   @override
@@ -30,7 +30,7 @@ class MyName extends ResponsiveStatelessWidget {
         children: <Widget>[
           Text(
             'Rakshith Gajendra',
-            style:  GoogleFonts.sacramento(
+            style: GoogleFonts.sacramento(
               fontSize: fontSize,
               fontStyle: FontStyle.italic,
             ),
@@ -38,11 +38,11 @@ class MyName extends ResponsiveStatelessWidget {
           AnimatedContainer(
             curve: Curves.easeIn,
             duration: Duration(seconds: 10),
-            height: fontSize! /9,
-            width: fontSize /9,
+            height: fontSize! / 9,
+            width: fontSize / 9,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.red,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           ),
         ],
