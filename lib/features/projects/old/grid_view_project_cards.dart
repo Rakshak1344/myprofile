@@ -3,9 +3,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:profile/arch/view/responsive_view.dart';
 import 'package:profile/features/common/widgets/nav_button.dart';
 import 'package:profile/features/projects/old/desktop_view_cards.dart';
-
-
-import 'package:url_launcher/url_launcher.dart';
+import 'package:profile/utils/url_launcher_extension.dart';
 
 import 'mobile_view_card.dart';
 
@@ -30,13 +28,13 @@ class GridViewProjectCards extends StatelessWidget {
     String todaysTaskBackImg = "https://gdurl.com/SJv8";
 
     //Task Routes
-    String taskRoutesGitHubURL =
+    String? taskRoutesGitHubURL =
         "https://github.com/Rakshak1344/Task-Manager-API";
     String taskRouteFrontImg = "https://gdurl.com/v2q99";
     String taskRouteBackImg = "https://gdurl.com/xlzB";
 
     //Chat-bot Booking assist
-    String chatbotGitHubURL =
+    String? chatbotGitHubURL =
         "https://github.com/Rakshak1344/Chatbot-Booking-Appointment";
     String chatBotFrontImg = "https://gdurl.com/WIdyg";
     String chatBotBackImg = "https://gdurl.com/kZfm";
@@ -57,11 +55,7 @@ class GridViewProjectCards extends StatelessWidget {
                     NavButton(
                       icon: MdiIcons.codeBraces,
                       iconColor: Colors.red,
-                      onPressed: () async {
-                        await canLaunch(arcSpaceGitHubURL)
-                            ? await launch(arcSpaceGitHubURL)
-                            : throw 'Could not launch $arcSpaceGitHubURL';
-                      },
+                      onPressed: arcSpaceGitHubURL.launchURL,
                     ),
                   ],
                 ),
@@ -79,20 +73,12 @@ class GridViewProjectCards extends StatelessWidget {
                     NavButton(
                       icon: MdiIcons.codeBraces,
                       iconColor: Colors.red,
-                      onPressed: () async {
-                        await canLaunch(nodeChatAppGitHubURL)
-                            ? await launch(nodeChatAppGitHubURL)
-                            : throw 'Could not launch $nodeChatAppGitHubURL';
-                      },
+                      onPressed: nodeChatAppGitHubURL.launchURL,
                     ),
                     NavButton(
                       icon: MdiIcons.openInNew,
                       iconColor: Colors.red,
-                      onPressed: () async {
-                        await canLaunch(nodeChatAppHostURL)
-                            ? await launch(nodeChatAppHostURL)
-                            : throw 'Could not launch $nodeChatAppGitHubURL';
-                      },
+                      onPressed: nodeChatAppHostURL.launchURL,
                     ),
                   ],
                 ),
@@ -110,11 +96,7 @@ class GridViewProjectCards extends StatelessWidget {
                       NavButton(
                         icon: MdiIcons.codeBraces,
                         iconColor: Colors.red,
-                        onPressed: () async {
-                          await canLaunch(flutterTodaysTaskGitHubURL)
-                              ? await launch(flutterTodaysTaskGitHubURL)
-                              : throw 'Could not launch $flutterTodaysTaskGitHubURL';
-                        },
+                        onPressed: flutterTodaysTaskGitHubURL.launchURL,
                       ),
                     ],
                   )),
@@ -131,11 +113,7 @@ class GridViewProjectCards extends StatelessWidget {
                     NavButton(
                       icon: MdiIcons.codeBraces,
                       iconColor: Colors.red,
-                      onPressed: () async {
-                        await canLaunch(taskRoutesGitHubURL)
-                            ? await launch(taskRoutesGitHubURL)
-                            : throw 'Could not launch $taskRoutesGitHubURL';
-                      },
+                      onPressed: taskRoutesGitHubURL.launchURL,
                     ),
                   ],
                 ),
@@ -153,11 +131,7 @@ class GridViewProjectCards extends StatelessWidget {
                     NavButton(
                       icon: MdiIcons.codeBraces,
                       iconColor: Colors.red,
-                      onPressed: () async {
-                        await canLaunch(chatbotGitHubURL)
-                            ? await launch(chatbotGitHubURL)
-                            : throw 'Could not launch $chatbotGitHubURL';
-                      },
+                      onPressed: chatbotGitHubURL.launchURL,
                     ),
                   ],
                 ),
@@ -182,11 +156,7 @@ class GridViewProjectCards extends StatelessWidget {
                         NavButton(
                           icon: MdiIcons.codeBraces,
                           iconColor: Colors.red,
-                          onPressed: () async {
-                            await canLaunch(arcSpaceGitHubURL)
-                                ? await launch(arcSpaceGitHubURL)
-                                : throw 'Could not launch $arcSpaceGitHubURL';
-                          },
+                          onPressed: arcSpaceGitHubURL.launchURL,
                         ),
                       ],
                     ),
@@ -204,20 +174,12 @@ class GridViewProjectCards extends StatelessWidget {
                         NavButton(
                           icon: MdiIcons.codeBraces,
                           iconColor: Colors.red,
-                          onPressed: () async {
-                            await canLaunch(nodeChatAppGitHubURL)
-                                ? await launch(nodeChatAppGitHubURL)
-                                : throw 'Could not launch $nodeChatAppGitHubURL';
-                          },
+                          onPressed: nodeChatAppGitHubURL.launchURL,
                         ),
                         NavButton(
                           icon: MdiIcons.openInNew,
                           iconColor: Colors.red,
-                          onPressed: () async {
-                            await canLaunch(nodeChatAppHostURL)
-                                ? await launch(nodeChatAppHostURL)
-                                : throw 'Could not launch $nodeChatAppGitHubURL';
-                          },
+                          onPressed: nodeChatAppHostURL.launchURL,
                         ),
                       ],
                     ),
@@ -240,11 +202,7 @@ class GridViewProjectCards extends StatelessWidget {
                           NavButton(
                             icon: MdiIcons.codeBraces,
                             iconColor: Colors.red,
-                            onPressed: () async {
-                              await canLaunch(flutterTodaysTaskGitHubURL)
-                                  ? await launch(flutterTodaysTaskGitHubURL)
-                                  : throw 'Could not launch $flutterTodaysTaskGitHubURL';
-                            },
+                            onPressed: flutterTodaysTaskGitHubURL.launchURL,
                           ),
                         ],
                       )),
@@ -261,11 +219,7 @@ class GridViewProjectCards extends StatelessWidget {
                         NavButton(
                           icon: MdiIcons.codeBraces,
                           iconColor: Colors.red,
-                          onPressed: () async {
-                            await canLaunch(taskRoutesGitHubURL)
-                                ? await launch(taskRoutesGitHubURL)
-                                : throw 'Could not launch $taskRoutesGitHubURL';
-                          },
+                          onPressed: taskRoutesGitHubURL.launchURL,
                         ),
                       ],
                     ),
@@ -288,11 +242,7 @@ class GridViewProjectCards extends StatelessWidget {
                         NavButton(
                           icon: MdiIcons.codeBraces,
                           iconColor: Colors.red,
-                          onPressed: () async {
-                            await canLaunch(chatbotGitHubURL)
-                                ? await launch(chatbotGitHubURL)
-                                : throw 'Could not launch $chatbotGitHubURL';
-                          },
+                          onPressed: chatbotGitHubURL.launchURL,
                         ),
                       ],
                     ),

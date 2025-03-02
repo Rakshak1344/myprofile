@@ -6,7 +6,7 @@ class AppListTileTheme {
 
     return ListTileThemeData(
       iconColor: color.primary,
-      textColor: color.onBackground,
+      textColor: color.onSurface,
     );
   }
 

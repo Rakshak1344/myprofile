@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:profile/features/profile/views/widgets/horizontal_line.dart';
 
 class TitleAndLine extends StatelessWidget {
   final String? preTitle;

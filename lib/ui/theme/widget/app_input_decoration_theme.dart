@@ -13,7 +13,7 @@ class AppInputDecorationTheme {
   static OutlineInputBorder _outlineBorder(ThemeData themeData) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: _borderSide(themeData.colorScheme.onBackground),
+      borderSide: _borderSide(themeData.colorScheme.onSurface),
     );
   }
 
@@ -46,8 +46,8 @@ class AppInputDecorationTheme {
       contentPadding: const EdgeInsets.only(left: 18),
       border: _outlineBorder(themeData),
       iconColor: themeData.colorScheme.primary,
-      prefixIconColor: themeData.colorScheme.onBackground,
-      suffixIconColor: themeData.colorScheme.onBackground,
+      prefixIconColor: themeData.colorScheme.onSurface,
+      suffixIconColor: themeData.colorScheme.onSurface,
       enabledBorder: _enableOutlineBorder(themeData),
       errorBorder: _errorOutlineBorder(themeData),
       disabledBorder: _disabledOutlineBorder(themeData),

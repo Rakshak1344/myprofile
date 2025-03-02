@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class DesktopViewCard extends StatelessWidget {
-  String projectName;
-  String projectDescription;
-  String frontImageURL;
-  String backImageUrl;
-  Column buttons;
+  final String projectName;
+  final String projectDescription;
+  final String frontImageURL;
+  final String backImageUrl;
+  final Column buttons;
 
   DesktopViewCard(
       {required this.projectName,

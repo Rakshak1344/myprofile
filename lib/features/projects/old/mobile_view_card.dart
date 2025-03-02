@@ -2,20 +2,21 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-
 class MobileViewCard extends StatelessWidget {
-  String projectName;
-  String projectDescription;
-  String frontImageURL;
-  String backImageUrl;
-  Row buttons;
+  final String projectName;
+  final String projectDescription;
+  final String frontImageURL;
+  final String backImageUrl;
+  final Row buttons;
+
   MobileViewCard({
     required this.projectName,
     required this.projectDescription,
     required this.frontImageURL,
     required this.backImageUrl,
-    required this.buttons
+    required this.buttons,
   });
+
   @override
   Widget build(BuildContext context) {
     return FlipCard(

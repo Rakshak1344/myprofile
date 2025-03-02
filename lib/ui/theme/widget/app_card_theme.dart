@@ -7,7 +7,7 @@ class AppCardTheme {
       clipBehavior: Clip.antiAlias,
       color: themeData.colorScheme.surface,
       shadowColor: themeData.colorScheme.primaryContainer.withOpacity(0.3),
-      surfaceTintColor: themeData.colorScheme.background,
+      surfaceTintColor: themeData.colorScheme.surface,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       // margin: const EdgeInsets.all(12),
     );

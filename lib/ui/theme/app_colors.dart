@@ -51,14 +51,10 @@ class AppColors {
     // Brightness
     brightness: Brightness.light,
 
-    // Background Colors
-    background: background,
-    onBackground: onBackground,
-
     // Surface Colors
     surface: surface,
     onSurface: onSurface,
-    surfaceVariant: surfaceVariant,
+    surfaceContainerHighest: surfaceVariant,
     onSurfaceVariant: onSurfaceVariant,
 
     surfaceTint: secondaryContainer,

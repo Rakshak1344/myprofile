@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/arch/view/responsive_view.dart';
 import 'package:profile/arch/view/riverpod_widgets/responsive_consumer_stateful_widget.dart';

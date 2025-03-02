@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/resources/resources.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:profile/utils/url_launcher_extension.dart';
 
 class EducationPage extends ResponsiveStatelessWidget {
   const EducationPage({super.key});
@@ -116,14 +116,10 @@ class EducationPage extends ResponsiveStatelessWidget {
     );
   }
 
-  Widget schoolCollegeLink(url) {
+  Widget schoolCollegeLink(String? url) {
     return IconButton(
       icon: Icon(Icons.open_in_new),
-      onPressed: () async {
-        await canLaunch(url)
-            ? await launch(url)
-            : throw 'Could not launch $url';
-      },
+      onPressed: url.launchURL,
     );
   }
 

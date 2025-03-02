@@ -5,7 +5,7 @@ class AppFloatingActionButtonTheme {
     ThemeData themeData,
   ) {
     return FloatingActionButtonThemeData(
-      foregroundColor: themeData.colorScheme.background,
+      foregroundColor: themeData.colorScheme.surface,
       backgroundColor: themeData.colorScheme.primary,
       extendedTextStyle: themeData.textTheme.titleMedium,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

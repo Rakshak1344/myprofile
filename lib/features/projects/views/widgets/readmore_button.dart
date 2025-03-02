@@ -38,6 +38,5 @@ class ReadmoreButton extends ResponsiveStatelessWidget {
         );
       },
     );
-    ;
   }
 }

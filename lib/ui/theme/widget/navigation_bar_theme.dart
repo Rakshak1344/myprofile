@@ -6,16 +6,16 @@ class AppNavBarTheme {
       backgroundColor: themeData.colorScheme.surface,
       surfaceTintColor: themeData.colorScheme.surface,
       indicatorColor: themeData.colorScheme.primary,
-      labelTextStyle: MaterialStateProperty.resolveWith(
+      labelTextStyle: WidgetStateProperty.resolveWith(
         (states) => themeData.textTheme.labelSmall?.copyWith(
-          color: states.contains(MaterialState.selected)
+          color: states.contains(WidgetState.selected)
               ? themeData.colorScheme.primary
               : themeData.colorScheme.onSurface,
         ),
       ),
-      iconTheme: MaterialStateProperty.resolveWith(
+      iconTheme: WidgetStateProperty.resolveWith(
         (states) => IconThemeData(
-          color: states.contains(MaterialState.selected)
+          color: states.contains(WidgetState.selected)
               ? themeData.colorScheme.onPrimary
               : themeData.colorScheme.onSurface,
         ),
