@@ -1,7 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:profile/arch/config/links.dart';
 import 'package:profile/resources/resources.dart';
 
 part 'company_data.freezed.dart';
+
 part 'company_data.g.dart';
 
 @freezed
@@ -27,11 +29,12 @@ class CompanyData with _$CompanyData {
         name: "Zenya",
         logo: Logos.zenya,
         locatedAt: "Quincy, Massachusetts, USA",
-        url: "https://zenya.io",
+        url: Links.company.zenya,
         startData: "June 2024 ",
         endData: "February 2025",
         designatedAs: "Software Developer",
-        description: "Zenya is a cloud-based, all-in-one property management software that empowers property managers and owners to maximize revenue, reduce operational costs, and enhance guest experiences through an integrated platform.",
+        description:
+            "Zenya is a cloud-based, all-in-one property management software that empowers property managers and owners to maximize revenue, reduce operational costs, and enhance guest experiences through an integrated platform.",
         highlights: """
 Integrated Sentry into frontend and backend applications, identifying and resolving 50% of critical
 issues and reducing performance bottlenecks by 30%, resulting in 20% improvement in overall system
@@ -44,7 +47,7 @@ experience and functionality.
         name: "Indipe",
         logo: Logos.indipe,
         locatedAt: 'Pune, Maharashtra',
-        url: "https://indipe.in",
+        url: Links.company.indipe,
         startData: "February 2023",
         endData: "May 2024",
         designatedAs: "Senior Developer",
@@ -83,7 +86,7 @@ Developed Goal-based money saving prototype app version utilizing NodeJS, MongoD
         locatedAt: 'Bengaluru, Karnataka',
         startData: "May 2020",
         endData: "November 2024",
-        url: "https://tezsure.com/",
+        url: Links.company.tezsure,
         designatedAs: "Flutter Developer Intern",
         description:
             "Tezsure is focused on decentralized finance applications under tezos, building Peer-to-peer transaction network based on blockchain technology.",

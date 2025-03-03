@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile/arch/config/links.dart';
 import 'package:profile/arch/view/widgets/responsive_stateless_widget.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:profile/resources/resources.dart';
@@ -6,13 +7,6 @@ import 'package:profile/utils/url_launcher_extension.dart';
 
 class EducationPage extends ResponsiveStatelessWidget {
   const EducationPage({super.key});
-
-  final String bacheloreCollegeURL = "https://www.acharya.ac.in/";
-  final String mastersCollegeURL = "https://www.theaims.ac.in/";
-  final String puCollegeURL = "https://svppu.hkes.edu.in/";
-  final String schoolURL = "https://www.stmarys-school.in/";
-  final String leftImage =
-      "https://images.unsplash.com/photo-1498079022511-d15614cb1c02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
 
   @override
   Widget buildDesktop(BuildContext context) {
@@ -50,7 +44,7 @@ class EducationPage extends ResponsiveStatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(
-            image: NetworkImage(leftImage),
+            image: NetworkImage(Links.education.placeholder),
             fit: BoxFit.cover,
           ),
         ),
@@ -64,19 +58,19 @@ class EducationPage extends ResponsiveStatelessWidget {
         ListTile(
           leading: CircleAvatar(
             child: Image.asset(
-              Education.aims,
+              EducationImage.aims,
               fit: BoxFit.fill,
             ),
           ),
           title: Text("Master of Computer Applications"),
           subtitle: Text("Acharya Institutes Of Higher education\n2019 - 2021"),
           isThreeLine: true,
-          trailing: schoolCollegeLink(mastersCollegeURL),
+          trailing: schoolCollegeLink(Links.education.masters),
         ),
         ListTile(
           leading: CircleAvatar(
             child: Image.asset(
-              Education.acharya,
+              EducationImage.acharya,
               fit: BoxFit.fill,
             ),
           ),
@@ -84,12 +78,12 @@ class EducationPage extends ResponsiveStatelessWidget {
           title: Text("Bachelor of Computer Application"),
           subtitle: Text("Acharya Institutes Of Graduate Studies\n2016 - 2019"),
           isThreeLine: true,
-          trailing: schoolCollegeLink(bacheloreCollegeURL),
+          trailing: schoolCollegeLink(Links.education.bachelors),
         ),
         ListTile(
           leading: CircleAvatar(
             child: Image.asset(
-              Education.svpuc,
+              EducationImage.svpuc,
               fit: BoxFit.fill,
             ),
           ),
@@ -97,12 +91,12 @@ class EducationPage extends ResponsiveStatelessWidget {
           title: Text("Pre - University"),
           subtitle: Text("Sree veerendra patil pre-university\n2014 - 2016"),
           isThreeLine: true,
-          trailing: schoolCollegeLink(puCollegeURL),
+          trailing: schoolCollegeLink(Links.education.pu),
         ),
         ListTile(
           leading: CircleAvatar(
             child: Image.asset(
-              Education.stMarysConvent,
+              EducationImage.stMarysConvent,
               fit: BoxFit.fill,
             ),
           ),
@@ -110,7 +104,7 @@ class EducationPage extends ResponsiveStatelessWidget {
           title: Text("Secondary Education"),
           subtitle: Text("ST. Mary's high school\n2003 - 2014"),
           isThreeLine: true,
-          trailing: schoolCollegeLink(schoolURL),
+          trailing: schoolCollegeLink(Links.education.school),
         ),
       ],
     );

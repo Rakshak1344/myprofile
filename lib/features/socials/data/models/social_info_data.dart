@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:profile/arch/config/links.dart';
 import 'package:profile/features/common/data/convertors/icon_data_convertor.dart';
 
 part 'social_info_data.freezed.dart';
@@ -19,20 +20,20 @@ class SocialInfoData with _$SocialInfoData {
       _$SocialInfoDataFromJson(json);
 
   static List<SocialInfoData> get socialInfoData => <SocialInfoData>[
-    SocialInfoData(
-      name: "Github",
-      iconData: MdiIcons.github,
-      url: 'https://github.com/Rakshak1344',
-    ),
-    SocialInfoData(
-      name: "LinkedIn",
-      iconData: MdiIcons.linkedin,
-      url: 'https://www.linkedin.com/in/rakshith-rakshak-4bb720173/',
-    ),
-    SocialInfoData(
-      name: "Twitter",
-      iconData: MdiIcons.twitter,
-      url: 'https://twitter.com/Rakshithdev14',
-    ),
-  ];
+        SocialInfoData(
+          name: "Github",
+          iconData: MdiIcons.github,
+          url: Links.my.github,
+        ),
+        SocialInfoData(
+          name: "LinkedIn",
+          iconData: MdiIcons.linkedin,
+          url: Links.my.linkedIn,
+        ),
+        SocialInfoData(
+          name: "Twitter",
+          iconData: MdiIcons.twitter,
+          url: Links.my.twitter,
+        ),
+      ];
 }

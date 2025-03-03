@@ -2,17 +2,17 @@ import 'package:profile/resources/resources.dart';
 
 class ProjectAppScreenshotList {
   static List<String> indipeConsumerScreenshots = [
-    Projects.indipeConsumer1,
-    Projects.indipeConsumer2,
-    Projects.indipeConsumer3,
-    Projects.indipeConsumer4,
-    Projects.indipeConsumer5,
+    ProjectImage.indipeConsumer1,
+    ProjectImage.indipeConsumer2,
+    ProjectImage.indipeConsumer3,
+    ProjectImage.indipeConsumer4,
+    ProjectImage.indipeConsumer5,
   ];
   static List<String> indipeBusinessScreenshots = [
-    Projects.indipeBusiness1,
-    Projects.indipeBusiness2,
-    Projects.indipeBusiness3,
-    Projects.indipeBusiness4,
-    Projects.indipeBusiness5,
+    ProjectImage.indipeBusiness1,
+    ProjectImage.indipeBusiness2,
+    ProjectImage.indipeBusiness3,
+    ProjectImage.indipeBusiness4,
+    ProjectImage.indipeBusiness5,
   ];
 }

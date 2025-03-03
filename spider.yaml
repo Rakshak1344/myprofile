@@ -23,10 +23,10 @@ groups:
     class_name: Logos
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
   - path: assets/education
-    class_name: Education
+    class_name: EducationImage
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
   - path: assets/projects
-    class_name: Projects
+    class_name: ProjectImage
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
   - path: assets/tech
     class_name: TechImage

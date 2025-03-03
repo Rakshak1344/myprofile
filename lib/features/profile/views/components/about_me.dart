@@ -76,10 +76,10 @@ class AboutMe extends ResponsiveStatelessWidget {
           'My academic background has equipped me with a strong foundation in software engineering, system design, and cloud technologies, enabling me to build high-performance applications that drive innovation.',
       navigateTo: AppRouteName.education,
       images: [
-        Education.aims,
-        Education.acharya,
-        Education.svpuc,
-        Education.stMarysConvent
+        EducationImage.aims,
+        EducationImage.acharya,
+        EducationImage.svpuc,
+        EducationImage.stMarysConvent
       ],
     );
   }
