@@ -101,9 +101,12 @@ class ExperienceTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(stack,
-                    style: Theme.of(context).textTheme.bodyMedium, maxLines: 1),
-                Text(experience, style: Theme.of(context).textTheme.bodySmall),
+                Text(
+                  stack,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  maxLines: 1,
+                ),
+                // Text(experience, style: Theme.of(context).textTheme.bodySmall),
               ],
             ),
           ),
