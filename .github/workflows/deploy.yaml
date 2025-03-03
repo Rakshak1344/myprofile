@@ -1,0 +1,36 @@
+name: Deploy Flutter Web to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter with FVM
+        run: |
+          curl -fsSL https://fvm.app/install.sh | bash
+          export PATH="$HOME/.pub-cache/bin:$PATH"
+          fvm install
+          fvm use
+
+      - name: Install dependencies
+        run: fvm flutter pub get
+
+      - name: Run Code Generation
+        run: fvm flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Build Flutter Web
+        run: fvm flutter build web --release --wasm --no-tree-shake-icons --base-href="/"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
