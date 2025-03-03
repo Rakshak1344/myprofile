@@ -23,11 +23,16 @@ jobs:
       - name: Install dependencies
         run: fvm flutter pub get
 
+      - name: Activate Spider
+        run: fvm dart pub global activate spider
+
       - name: Run Code Generation
-        run: fvm flutter pub run build_runner build --delete-conflicting-outputs
+        run: |
+          fvm flutter pub run build_runner build --delete-conflicting-outputs
+          fvm dart pub global run spider build
 
       - name: Build Flutter Web
-        run: fvm flutter build web --release --wasm --no-tree-shake-icons --base-href="/"
+        run: fvm flutter build web --release --wasm --no-tree-shake-icons --base-href="/myprofile/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
