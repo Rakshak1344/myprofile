@@ -1,4 +1,3 @@
-
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -55,6 +54,11 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
 
   /// Redirects the user our core state changes.
   String? redirect(BuildContext context, GoRouterState state) {
+
+    if (state.matchedLocation == '/') {
+      return '/me';
+    }
+
     if (this.state.isLoading || this.state.hasError) {
       return null;
     }

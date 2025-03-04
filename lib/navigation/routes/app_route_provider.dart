@@ -20,10 +20,10 @@ class AppRoutesProvider extends RouteProvider {
         path: '/',
         redirect: (context, state) {
           // Redirect only if the user is exactly on '/'
-          if (state.uri.toString() == '/') {
-            return 'me'; // Or any default path you want
-          }
-          return null; // No redirect for other paths
+          // if (state.matchedLocation == '/') {
+          //   return 'me'; // Or any default path you want
+          // }
+          // return 'me'; // No redirect for other paths
         },
         routes: [
           ShellRoute(
@@ -35,19 +35,19 @@ class AppRoutesProvider extends RouteProvider {
                 path: 'me',
                 name: AppRouteName.me,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: ProfilePage()),
+                    const NoTransitionPage(child: ProfilePage()),
               ),
               GoRoute(
                 path: 'career',
                 name: AppRouteName.career,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: CareerPage()),
+                    const NoTransitionPage(child: CareerPage()),
               ),
               GoRoute(
                 path: 'projects',
                 name: AppRouteName.projects,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: ProjectsPage()),
+                    const NoTransitionPage(child: ProjectsPage()),
                 routes: [
                   GoRoute(
                     path: ':slug',
@@ -64,13 +64,13 @@ class AppRoutesProvider extends RouteProvider {
                 path: 'education',
                 name: AppRouteName.education,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: EducationPage()),
+                    const NoTransitionPage(child: EducationPage()),
               ),
               GoRoute(
                 path: 'contact',
                 name: AppRouteName.contact,
                 pageBuilder: (BuildContext context, GoRouterState state) =>
-                    NoTransitionPage(child: ContactPage()),
+                    const NoTransitionPage(child: ContactPage()),
               ),
             ],
           ),

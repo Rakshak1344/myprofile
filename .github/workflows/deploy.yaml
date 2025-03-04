@@ -34,10 +34,10 @@ jobs:
       - name: Build Flutter Web
         run: fvm flutter build web --release --wasm --no-tree-shake-icons --base-href="/myprofile/"
 
-      - name: Add .nojekyll and 404.html
-        run: |
-          touch build/web/.nojekyll
-          echo '<!DOCTYPE html><html lang="en"><head><meta http-equiv="refresh" content="0; url=/" /></head><body></body></html>' > build/web/404.html
+#      - name: Add .nojekyll and 404.html
+#        run: |
+#          touch build/web/.nojekyll
+#          echo '<!DOCTYPE html><html lang="en"><head><meta http-equiv="refresh" content="0; url=/" /></head><body></body></html>' > build/web/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
