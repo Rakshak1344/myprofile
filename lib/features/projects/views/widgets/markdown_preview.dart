@@ -11,11 +11,12 @@ class MarkdownPreview extends ResponsiveConsumerStatefulWidget {
   final String? readmeContentOrLink;
 
   const MarkdownPreview({
-    Key? key,
+    super.key,
     required this.readmeContentOrLink,
     this.title = "Readme.md",
-  }) : super(key: key);
+  });
 
+  @override
   ResponsiveConsumerState<MarkdownPreview> createState() =>
       _MarkdownPreviewState();
 }
@@ -33,7 +34,7 @@ class _MarkdownPreviewState extends ResponsiveConsumerState<MarkdownPreview> {
   Future<void> _fetchMarkdown() async {
     if (widget.readmeContentOrLink == null) {
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("Invalid Readme Url")));
+          .showSnackBar(const SnackBar(content: Text("Invalid Readme Url")));
       setState(() => _isLoading = false);
       return;
     }
@@ -93,7 +94,7 @@ class _MarkdownPreviewState extends ResponsiveConsumerState<MarkdownPreview> {
   }
 
   Widget buildLoading() {
-    return Center(
+    return const Center(
       child: SizedBox(
         height: 20,
         width: 20,
@@ -111,7 +112,7 @@ class _MarkdownPreviewState extends ResponsiveConsumerState<MarkdownPreview> {
         styleSheet: MarkdownStyleSheet(
           // h1: const TextStyle(fontSize: 24, color: Colors.blue),
           code: TextStyle(fontSize: 14, backgroundColor: Colors.grey[100]),
-          codeblockPadding: EdgeInsets.all(8),
+          codeblockPadding: const EdgeInsets.all(8),
           codeblockDecoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.grey[100],

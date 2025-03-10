@@ -9,8 +9,9 @@ class DesktopViewCard extends StatelessWidget {
   final String backImageUrl;
   final Column buttons;
 
-  DesktopViewCard(
-      {required this.projectName,
+  const DesktopViewCard(
+      {super.key,
+      required this.projectName,
       required this.projectDescription,
       required this.frontImageURL,
       required this.backImageUrl,
@@ -19,7 +20,7 @@ class DesktopViewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlipCard(
-      front: Container(
+      front: SizedBox(
           height: 250,
           width: MediaQuery.of(context).size.width / 3,
           child: Card(
@@ -27,7 +28,7 @@ class DesktopViewCard extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             child: Row(
               children: <Widget>[
-                Container(
+                SizedBox(
                   width: MediaQuery.of(context).size.width / 3 * 0.5,
                   height: 250,
                   child: Image.network(
@@ -47,7 +48,7 @@ class DesktopViewCard extends StatelessWidget {
                             Text(
                               projectName,
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 22,
                                 color: Colors.blueGrey,
                               ),
@@ -61,17 +62,17 @@ class DesktopViewCard extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
                         child: Text(
                           projectDescription,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 12,
                             color: Colors.black87,
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Align(
@@ -79,7 +80,7 @@ class DesktopViewCard extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
-                            Text("Click to flip"),
+                            const Text("Click to flip"),
                             Icon(
                               MdiIcons.flipToBack,
                               color: Colors.red,
@@ -93,7 +94,7 @@ class DesktopViewCard extends StatelessWidget {
               ],
             ),
           )),
-      back: Container(
+      back: SizedBox(
         height: 250,
         width: MediaQuery.of(context).size.width / 3,
         child: Card(
@@ -112,51 +113,47 @@ class DesktopViewCard extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Container(
-                  // width: MediaQuery.of(context).size.width / 3 * 0.3,
-                  // height: 250,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: <Widget>[
-                              Text(
-                                "More",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 22,
-                                  color: Colors.blueGrey,
-                                ),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: <Widget>[
+                            const Text(
+                              "More",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: Colors.blueGrey,
                               ),
-                              Container(
-                                color: Colors.black,
-                                height: 1.5,
-                                width: MediaQuery.of(context).size.width * 0.1,
-                              ),
-                            ],
-                          ),
+                            ),
+                            Container(
+                              color: Colors.black,
+                              height: 1.5,
+                              width: MediaQuery.of(context).size.width * 0.1,
+                            ),
+                          ],
                         ),
-                        buttons,
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: <Widget>[
-                              Text("Click to flip"),
-                              Icon(
-                                MdiIcons.flipToBack,
-                                color: Colors.red,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      buttons,
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            const Text("Click to flip"),
+                            Icon(
+                              MdiIcons.flipToBack,
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
               )

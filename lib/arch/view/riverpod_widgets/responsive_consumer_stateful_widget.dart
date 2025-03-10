@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:profile/arch/view/responsive_mixin.dart';
 
 abstract class ResponsiveConsumerStatefulWidget extends ConsumerStatefulWidget {
-  const ResponsiveConsumerStatefulWidget({Key? key}) : super(key: key);
+  const ResponsiveConsumerStatefulWidget({super.key});
 
   @override
   ResponsiveConsumerState createState();

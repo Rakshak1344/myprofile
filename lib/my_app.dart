@@ -6,6 +6,7 @@ import 'package:profile/ui/theme/app_theme.dart';
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
+  @override
   ConsumerState createState() => _MyAppState();
 }
 

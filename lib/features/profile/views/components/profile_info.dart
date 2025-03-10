@@ -8,13 +8,15 @@ import 'package:profile/features/profile/views/widgets/resume_button.dart';
 import 'package:profile/features/socials/views/social_info.dart';
 
 class ProfileInfo extends ResponsiveStatelessWidget {
+  const ProfileInfo({super.key});
+
   @override
   Widget buildDesktop(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        MyImage(),
+        const MyImage(),
         profileData(context),
       ],
     );
@@ -35,7 +37,7 @@ class ProfileInfo extends ResponsiveStatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        MyImage(),
+        const MyImage(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.03),
         profileData(context),
       ],
@@ -48,16 +50,16 @@ class ProfileInfo extends ResponsiveStatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         hiThereGreeting(context),
-        MyName(),
+        const MyName(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         designation(context),
         experience(context),
         ExperienceIn(),
-        ResumeButton(),
+        const ResumeButton(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-        SocialInfo(),
+        const SocialInfo(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-        BuiltResponsiveFlutter(),
+        const BuiltResponsiveFlutter(),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
       ],
     );
@@ -74,7 +76,7 @@ class ProfileInfo extends ResponsiveStatelessWidget {
     return Text(
       "Full Stack Mobile Developer",
       softWrap: true,
-      textScaler: TextScaler.linear(1.5),
+      textScaler: const TextScaler.linear(1.5),
       textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.titleLarge,
     );
@@ -83,7 +85,7 @@ class ProfileInfo extends ResponsiveStatelessWidget {
   Widget hiThereGreeting(context) {
     return Text(
       "Hi there! Glad to meet you, I'm",
-      textScaler: TextScaler.linear(2),
+      textScaler: const TextScaler.linear(2),
       style: Theme.of(context).textTheme.bodySmall,
     );
   }

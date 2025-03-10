@@ -62,7 +62,7 @@ Integrated KYC (Know Your Customer) module for investment platform, allowing mer
 SIP daily or monthly, resulting in 40% increase in user engagement.
           """,
       ),
-      CompanyData(
+      const CompanyData(
         name: "SuperPay",
         logo: Logos.superpay,
         locatedAt: 'Bengaluru, Karnataka',

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:profile/arch/view/widgets/responsive_stateful_widget.dart';
 
 class MyResponsivePage extends ResponsiveStatefulWidget {
-  const MyResponsivePage({Key? key}) : super(key: key);
+  const MyResponsivePage({super.key});
 
   @override
-  _MyResponsivePageState createState() => _MyResponsivePageState();
+  ResponsiveState<MyResponsivePage> createState() => _MyResponsivePageState();
 }
 
 class _MyResponsivePageState extends ResponsiveState<MyResponsivePage> {

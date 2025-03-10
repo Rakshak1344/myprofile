@@ -62,8 +62,8 @@ class EducationPage extends ResponsiveStatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
-          title: Text("Master of Computer Applications"),
-          subtitle: Text("Acharya Institutes Of Higher education\n2019 - 2021"),
+          title: const Text("Master of Computer Applications"),
+          subtitle: const Text("Acharya Institutes Of Higher education\n2019 - 2021"),
           isThreeLine: true,
           trailing: schoolCollegeLink(Links.education.masters),
         ),
@@ -75,8 +75,8 @@ class EducationPage extends ResponsiveStatelessWidget {
             ),
           ),
           // leading: CircleAvatar(child: Text("B")),
-          title: Text("Bachelor of Computer Application"),
-          subtitle: Text("Acharya Institutes Of Graduate Studies\n2016 - 2019"),
+          title: const Text("Bachelor of Computer Application"),
+          subtitle: const Text("Acharya Institutes Of Graduate Studies\n2016 - 2019"),
           isThreeLine: true,
           trailing: schoolCollegeLink(Links.education.bachelors),
         ),
@@ -88,8 +88,8 @@ class EducationPage extends ResponsiveStatelessWidget {
             ),
           ),
           // leading: CircleAvatar(child: Text("P")),
-          title: Text("Pre - University"),
-          subtitle: Text("Sree veerendra patil pre-university\n2014 - 2016"),
+          title: const Text("Pre - University"),
+          subtitle: const Text("Sree veerendra patil pre-university\n2014 - 2016"),
           isThreeLine: true,
           trailing: schoolCollegeLink(Links.education.pu),
         ),
@@ -101,8 +101,8 @@ class EducationPage extends ResponsiveStatelessWidget {
             ),
           ),
           // leading: CircleAvatar(child: Text("S")),
-          title: Text("Secondary Education"),
-          subtitle: Text("ST. Mary's high school\n2003 - 2014"),
+          title: const Text("Secondary Education"),
+          subtitle: const Text("ST. Mary's high school\n2003 - 2014"),
           isThreeLine: true,
           trailing: schoolCollegeLink(Links.education.school),
         ),
@@ -112,21 +112,21 @@ class EducationPage extends ResponsiveStatelessWidget {
 
   Widget schoolCollegeLink(String? url) {
     return IconButton(
-      icon: Icon(Icons.open_in_new),
+      icon: const Icon(Icons.open_in_new),
       onPressed: url.launchURL,
     );
   }
 
   Widget buildEducationInfo() {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
         children: [
-          TitleAndLine(title: "Education", preTitle: "My"),
-          SizedBox(height: 20),
+          const TitleAndLine(title: "Education", preTitle: "My"),
+          const SizedBox(height: 20),
           schoolCollegeColumn(),
         ],
       ),

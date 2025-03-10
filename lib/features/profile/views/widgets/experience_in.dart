@@ -29,7 +29,7 @@ class ExperienceIn extends ResponsiveStatelessWidget {
           Text(
             "Experience In  ",
             softWrap: true,
-            textScaler: TextScaler.linear(1.5),
+            textScaler: const TextScaler.linear(1.5),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium,
           ),

@@ -22,30 +22,33 @@ class MyName extends ResponsiveStatelessWidget {
 
   Widget buildMyName(context, {double? fontSize}) {
     return AnimatedContainer(
-      padding: EdgeInsets.all(10),
-      duration: Duration(milliseconds: 50),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Rakshith Gajendra',
-            style: GoogleFonts.sacramento(
-              fontSize: fontSize,
-              fontStyle: FontStyle.italic,
+      padding: const EdgeInsets.all(10),
+      duration: const Duration(milliseconds: 50),
+      child: FittedBox(
+        fit: BoxFit.fitWidth,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Rakshith Gajendra',
+              style: GoogleFonts.sacramento(
+                fontSize: fontSize,
+                fontStyle: FontStyle.italic,
+              ),
             ),
-          ),
-          AnimatedContainer(
-            curve: Curves.easeIn,
-            duration: Duration(seconds: 10),
-            height: fontSize! / 9,
-            width: fontSize / 9,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Theme.of(context).colorScheme.secondary,
+            AnimatedContainer(
+              curve: Curves.easeIn,
+              duration: const Duration(seconds: 10),
+              height: fontSize! / 9,
+              width: fontSize / 9,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

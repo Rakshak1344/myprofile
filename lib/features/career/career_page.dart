@@ -15,11 +15,11 @@ class CareerPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 32),
-          TitleAndLine(preTitle: "My", title: "Experience"),
-          SizedBox(height: 40),
+          const SizedBox(height: 32),
+          const TitleAndLine(preTitle: "My", title: "Experience"),
+          const SizedBox(height: 40),
           ...buildCareer(CompanyData.myCompanyData, context),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -79,7 +79,7 @@ class CareerPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
-              HorizontalLine()
+              const HorizontalLine()
             ],
           ),
         ),

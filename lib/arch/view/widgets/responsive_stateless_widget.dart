@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 abstract class ResponsiveStatelessWidget extends StatelessWidget
     with ResponsiveMixin {
-  const ResponsiveStatelessWidget({Key? key}) : super(key: key);
+  const ResponsiveStatelessWidget({super.key});
 
   Widget buildMobile(BuildContext context);
 

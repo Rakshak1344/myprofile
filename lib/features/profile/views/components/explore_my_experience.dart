@@ -22,7 +22,7 @@ class ExploreMyExperience extends ResponsiveStatelessWidget {
   }
 
   Widget buildExploreMyExperience() {
-    return Column(
+    return const Column(
       children: [
         TitleAndLine(preTitle: "Worked on these", title: "Tech"),
         SizedBox(height: 20),
@@ -52,8 +52,8 @@ class ExperienceContainer extends ResponsiveStatelessWidget {
 
   Widget buildExperienceContainer(context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      margin: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           border: Border.all(), borderRadius: BorderRadius.circular(16)),
       child: Wrap(

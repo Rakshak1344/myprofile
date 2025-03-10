@@ -10,8 +10,9 @@ import 'package:profile/features/projects/views/widgets/projects_list_widget.dar
 import 'components/profile_info.dart';
 
 class ProfilePage extends ResponsiveConsumerStatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+  const ProfilePage({super.key});
 
+  @override
   ResponsiveConsumerState<ProfilePage> createState() => _ProfilePageState();
 }
 
@@ -34,11 +35,11 @@ class _ProfilePageState extends ResponsiveConsumerState<ProfilePage> {
   Widget buildBody(BuildContext context) {
     return SingleChildScrollView(
       child: AnimatedPadding(
-        duration: Duration(seconds: 2),
+        duration: const Duration(seconds: 2),
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.1 / 2,
             vertical: MediaQuery.of(context).size.height * 0.1 / 1),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[

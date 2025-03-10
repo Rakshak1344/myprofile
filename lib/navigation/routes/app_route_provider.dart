@@ -19,6 +19,8 @@ class AppRoutesProvider extends RouteProvider {
         name: AppRouteName.root,
         path: '/',
         redirect: (context, state) {
+          return null;
+        
           // Redirect only if the user is exactly on '/'
           // if (state.matchedLocation == '/') {
           //   return 'me'; // Or any default path you want

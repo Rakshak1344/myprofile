@@ -25,7 +25,7 @@ class ActionIcons extends ResponsiveStatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Text(
+        const Text(
           "{",
           style: TextStyle(
               fontWeight: FontWeight.w600, color: Colors.red, fontSize: 20),
@@ -34,8 +34,8 @@ class ActionIcons extends ResponsiveStatelessWidget {
         Icon(MdiIcons.desktopClassic),
         Icon(MdiIcons.keyboard),
         Icon(MdiIcons.cellphone),
-        Icon(Icons.flight),
-        Text(
+        const Icon(Icons.flight),
+        const Text(
           "}",
           style: TextStyle(
               fontWeight: FontWeight.w600, color: Colors.red, fontSize: 20),

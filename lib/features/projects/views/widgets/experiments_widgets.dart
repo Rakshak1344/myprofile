@@ -32,11 +32,11 @@ class ExperimentsListWidget extends ResponsiveStatelessWidget {
   Widget buildExperimentsPage(context) {
     return Column(
       children: [
-        TitleAndLine(title: "Experiments", preTitle: "My"),
-        SizedBox(height: 20),
+        const TitleAndLine(title: "Experiments", preTitle: "My"),
+        const SizedBox(height: 20),
         ...List.generate(ProjectData.experiments.length, (i) {
           return buildListTile(ProjectData.experiments[i]);
-        }).toList(),
+        }),
       ],
     );
   }

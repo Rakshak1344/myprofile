@@ -13,7 +13,7 @@ class ProjectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (project == null) {
-      return NoProjectFoundPage();
+      return const NoProjectFoundPage();
     }
 
     return ProjectDetailPage(projectData: project!);

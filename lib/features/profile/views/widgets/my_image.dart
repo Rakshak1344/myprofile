@@ -7,7 +7,7 @@ class MyImage extends ResponsiveStatelessWidget {
   @override
   Widget buildDesktop(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       height: MediaQuery.of(context).size.width * 0.25,
       width: MediaQuery.of(context).size.width * 0.25,
       decoration: buildBoxDecoration(),
@@ -17,7 +17,7 @@ class MyImage extends ResponsiveStatelessWidget {
   @override
   Widget buildMobile(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       height: MediaQuery.of(context).size.height * 0.25,
       width: MediaQuery.of(context).size.height * 0.25,
       decoration: buildBoxDecoration(),
@@ -27,7 +27,7 @@ class MyImage extends ResponsiveStatelessWidget {
   @override
   Widget buildTablet(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       height: MediaQuery.of(context).size.height * 0.25,
       width: MediaQuery.of(context).size.height * 0.25,
       decoration: buildBoxDecoration(),
@@ -35,10 +35,10 @@ class MyImage extends ResponsiveStatelessWidget {
   }
 
   BoxDecoration buildBoxDecoration() {
-    final url =
+    const url =
         "https://pbs.twimg.com/profile_images/1146055708569292800/DaVWnQm3_400x400.jpg";
 
-    return BoxDecoration(
+    return const BoxDecoration(
       shape: BoxShape.circle,
       image: DecorationImage(
         image: NetworkImage(url),

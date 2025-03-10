@@ -12,7 +12,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
   final String description;
   final List<String> images;
 
-  CareerInfo({
+  const CareerInfo({
     super.key,
     this.navigateTo,
     required this.title,
@@ -53,18 +53,18 @@ class CareerInfo extends ResponsiveStatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(iconData),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 title,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 subtitle,
                 style: Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 description,
                 style: Theme.of(context).textTheme.bodySmall,
@@ -99,7 +99,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
   }
 
   Widget buildStackedLogos(context) {
-    return Container(
+    return SizedBox(
       height: 60,
       child: Align(
         alignment: Alignment.centerLeft,
@@ -125,7 +125,7 @@ class CareerInfo extends ResponsiveStatelessWidget {
     return Container(
       width: 45,
       height: 45,
-      margin: EdgeInsets.symmetric(horizontal: 2.0),
+      margin: const EdgeInsets.symmetric(horizontal: 2.0),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(),

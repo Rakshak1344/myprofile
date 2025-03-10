@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -54,7 +53,7 @@ class ProjectData with _$ProjectData {
     techIconAssets: [TechImage.flutter],
   );
 
-  static ProjectData _indipeBusiness = ProjectData(
+  static final ProjectData _indipeBusiness = ProjectData(
     companyLogo: Logos.indipe,
     companyName: "Indipe paytech private limited",
     companyUrl: Links.company.indipe,
@@ -71,7 +70,7 @@ class ProjectData with _$ProjectData {
     techIconAssets: [TechImage.flutter, TechImage.pgsql, TechImage.sentry],
   );
 
-  static var _indipeConsumer = ProjectData(
+  static final _indipeConsumer = ProjectData(
     companyLogo: Logos.indipe,
     companyName: "Indipe paytech private limited",
     companyUrl: Links.company.indipe,
@@ -88,7 +87,7 @@ class ProjectData with _$ProjectData {
     techIconAssets: [TechImage.flutter, TechImage.pgsql, TechImage.sentry],
   );
 
-  static var _tezsure = ProjectData(
+  static final _tezsure = ProjectData(
     companyLogo: Logos.tezsure,
     companyName: "Tezsure",
     companyUrl: Links.company.tezsure,
