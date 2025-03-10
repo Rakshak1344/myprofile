@@ -8,6 +8,8 @@ import 'package:profile/utils/url_launcher_extension.dart';
 import 'mobile_view_card.dart';
 
 class GridViewProjectCards extends StatelessWidget {
+  const GridViewProjectCards({super.key});
+
   @override
   Widget build(BuildContext context) {
     //Arc Space

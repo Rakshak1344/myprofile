@@ -27,7 +27,7 @@ class ReadmoreButton extends ResponsiveStatelessWidget {
   Widget buildReadmoreButton(context) {
     return OutlinedButton.icon(
       label: Text("Read more", style: Theme.of(context).textTheme.bodySmall),
-      icon: Icon(Icons.read_more_rounded),
+      icon: const Icon(Icons.read_more_rounded),
       style: Theme.of(context).outlinedButtonTheme.style?.copyWith(
             visualDensity: VisualDensity.compact,
           ),

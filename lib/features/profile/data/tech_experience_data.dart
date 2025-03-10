@@ -21,7 +21,7 @@ class TechExperienceData with _$TechExperienceData {
       _$TechExperienceDataFromJson(json);
 
   static List<TechExperienceData> get stack => <TechExperienceData>[
-        TechExperienceData(
+        const TechExperienceData(
           name: 'Flutter',
           experienceLevel: 'Experienced',
           assetUrl: TechImage.flutter,
@@ -41,7 +41,7 @@ class TechExperienceData with _$TechExperienceData {
           experienceLevel: 'Intermediate',
           iconData: MdiIcons.nodejs,
         ),
-        TechExperienceData(
+        const TechExperienceData(
           name: 'MongoDB',
           experienceLevel: 'Intermediate',
           assetUrl: TechImage.mongoDb,
@@ -91,7 +91,7 @@ class TechExperienceData with _$TechExperienceData {
           experienceLevel: 'Intermediate',
           iconData: MdiIcons.materialDesign,
         ),
-        TechExperienceData(
+        const TechExperienceData(
           name: 'Sentry',
           experienceLevel: 'Intermediate',
           assetUrl: TechImage.sentry,

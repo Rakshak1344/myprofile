@@ -4,7 +4,7 @@ import 'package:profile/arch/view/responsive_mixin.dart';
 
 abstract class ResponsiveConsumerWidget extends ConsumerWidget
     with ResponsiveMixin {
-  const ResponsiveConsumerWidget({Key? key}) : super(key: key);
+  const ResponsiveConsumerWidget({super.key});
 
   Widget buildMobile(BuildContext context, WidgetRef ref);
 

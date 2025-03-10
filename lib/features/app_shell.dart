@@ -21,6 +21,7 @@ class AppShell extends ResponsiveConsumerStatefulWidget {
     required this.state,
   });
 
+  @override
   ResponsiveConsumerState<AppShell> createState() => _AppShellState();
 }
 
@@ -51,7 +52,7 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
       body: widget.child,
       appBar: AppBar(
         elevation: 0.0,
-        title: RGInitial(),
+        title: const RGInitial(),
         actions: [AppNavigationButtons(state: widget.state)],
       ),
     );
@@ -61,7 +62,7 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
     return AppBar(
       elevation: 0.0,
       automaticallyImplyLeading: false,
-      title: RGInitial(),
+      title: const RGInitial(),
       actions: [AppPopupMenuButton(state: widget.state)],
     );
   }
@@ -97,8 +98,8 @@ class _AppShellState extends ResponsiveConsumerState<AppShell> {
       elevation: 0.0,
       backgroundColor: Colors.white70,
       automaticallyImplyLeading: false,
-      iconTheme: IconThemeData(color: Colors.black),
-      title: RGInitial(),
+      iconTheme: const IconThemeData(color: Colors.black),
+      title: const RGInitial(),
     );
   }
 

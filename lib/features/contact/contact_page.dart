@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/features/common/widgets/title_and_line.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -26,18 +27,22 @@ class _ContactPageState extends State<ContactPage> {
       query:
           'subject=Contact from $name&body=Name: $name\nEmail: $email\nMessage: $message',
     );
+    var context = AppConfig.navigatorKey.currentContext;
 
     if (await canLaunchUrl(emailUri)) {
+      if (!context!.mounted) return;
+
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
             content: Text('Email client opened. Please complete sending.')),
       );
-      Future.delayed(Duration(seconds: 2)).then((_) async {
+      Future.delayed(const Duration(seconds: 2)).then((_) async {
         await launchUrl(emailUri);
       });
       return;
     }
 
+    if (!context!.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Could not open email client.')),
     );
@@ -49,16 +54,16 @@ class _ContactPageState extends State<ContactPage> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-
-          SizedBox(height: 20),
-          TitleAndLine(
+          const SizedBox(height: 20),
+          const TitleAndLine(
             preTitle: "Get in touch",
             title: "Contact Me",
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             width: 400,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(16),border: Border.all()),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16), border: Border.all()),
             padding: const EdgeInsets.all(16.0),
             child: Form(
               key: _formKey,
@@ -103,7 +108,7 @@ class _ContactPageState extends State<ContactPage> {
                 }
               },
               label: const Text('Send'),
-              icon: Icon(Icons.send),
+              icon: const Icon(Icons.send),
             ),
           ),
         ],

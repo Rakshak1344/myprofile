@@ -13,7 +13,8 @@ extension UrlLauncherExtension on String? {
 
     var uri = Uri.parse(this!);
     if (!await launchUrl(uri)) {
-      ScaffoldMessenger.of(context!).showSnackBar(
+      if (!context!.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Could not open the the link $uri")));
     }
   }

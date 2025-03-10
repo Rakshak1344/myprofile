@@ -33,23 +33,23 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           buildBackButton(),
           Container(
             width: width,
-            margin: EdgeInsets.all(22),
-            padding: EdgeInsets.symmetric(vertical: 22),
+            margin: const EdgeInsets.all(22),
+            padding: const EdgeInsets.symmetric(vertical: 22),
             decoration: buildBoxDecoration(),
             child: Column(
               children: [
                 Row(
                   children: [
                     buildCarousel(),
-                    SizedBox(width: 22),
+                    const SizedBox(width: 22),
                     Expanded(child: buildProjectDetails(false)),
                   ],
                 ),
-                SizedBox(height: 22),
+                const SizedBox(height: 22),
                 if (projectData.readmeContentOrLink != null) ...[
                   ...buildContentTitle(context, "More on ${projectData.name}"),
                   buildMarkdown(),
@@ -64,14 +64,14 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
 
   List<Widget> buildContentTitle(context, String title) {
     return [
-      HorizontalLine(),
+      const HorizontalLine(),
       Text(title, style: Theme.of(context).textTheme.titleLarge),
-      HorizontalLine(),
+      const HorizontalLine(),
     ];
   }
 
   Widget buildMarkdown() {
-    return Container(
+    return SizedBox(
       height: 400,
       width: width,
       child:
@@ -83,21 +83,21 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22.0),
             child: buildBackButton(),
           ),
           Container(
             width: width,
-            margin: EdgeInsets.all(22),
-            padding: EdgeInsets.symmetric(vertical: 22),
+            margin: const EdgeInsets.all(22),
+            padding: const EdgeInsets.symmetric(vertical: 22),
             decoration: buildBoxDecoration(),
             child: Column(
               children: [
                 buildCarousel(),
                 buildProjectDetails(true),
-                SizedBox(height: 55),
+                const SizedBox(height: 55),
                 if (projectData.readmeContentOrLink != null) ...[
                   ...buildContentTitle(context, "More on ${projectData.name}"),
                   buildMarkdown(),
@@ -124,10 +124,10 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     );
   }
 
-  Container buildBackButton() {
-    return Container(
+  Widget buildBackButton() {
+    return SizedBox(
       width: width,
-      child: Align(
+      child: const Align(
         alignment: Alignment.centerLeft,
         child: BackButton(),
       ),
@@ -139,7 +139,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         buildCarousel(),
-        SizedBox(height: 22),
+        const SizedBox(height: 22),
         buildProjectDetails(true),
       ],
     );
@@ -147,10 +147,10 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
 
   Widget buildCarousel() {
     if (projectData.images == null) {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
 
-    return Container(
+    return SizedBox(
       width: 300,
       height: 400,
       child: CarouselSlider.builder(
@@ -162,8 +162,8 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
           autoPlay: projectData.images!.length > 1,
           enlargeCenterPage: true,
           scrollPhysics: projectData.images!.length > 1
-              ? AlwaysScrollableScrollPhysics()
-              : NeverScrollableScrollPhysics(),
+              ? const AlwaysScrollableScrollPhysics()
+              : const NeverScrollableScrollPhysics(),
         ),
       ),
     );
@@ -173,7 +173,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     var context = AppConfig.navigatorKey.currentContext;
     return Container(
       padding: shouldAddPadding
-          ? EdgeInsets.symmetric(horizontal: 22)
+          ? const EdgeInsets.symmetric(horizontal: 22)
           : EdgeInsets.zero,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -187,9 +187,9 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Text(projectData.description, textAlign: TextAlign.center),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           buildButtons(),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           ...techUsed(),
         ],
       ),
@@ -206,7 +206,7 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: urls.map((url) {
-        if (url == null) return SizedBox.shrink();
+        if (url == null) return const SizedBox.shrink();
 
         return Padding(
           padding: const EdgeInsets.only(right: 8.0),
@@ -218,14 +218,12 @@ class ProjectDetailPage extends ResponsiveStatelessWidget {
 
   List<Widget> techUsed() {
     return [
-      Text("Tech used"),
+      const Text("Tech used"),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ...?projectData.techIconAssets
-              ?.map((e) => Image.asset(e, scale: 2))
-              .toList(),
-          ...?projectData.techIcons?.map((e) => Icon(e)).toList(),
+          ...?projectData.techIconAssets?.map((e) => Image.asset(e, scale: 2)),
+          ...?projectData.techIcons?.map((e) => Icon(e)),
         ],
       )
     ];

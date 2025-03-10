@@ -20,6 +20,6 @@ class NoProjectFoundPage extends ResponsiveStatelessWidget {
   }
 
   Widget buildNoProjectFoundPage() {
-    return Center(child: Text("No project found"));
+    return const Center(child: Text("No project found"));
   }
 }

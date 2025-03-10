@@ -11,8 +11,9 @@ import 'package:profile/navigation/routes/app_route_name.dart';
 class AppNavigationRail extends ResponsiveConsumerStatefulWidget {
   final GoRouterState state;
 
-  const AppNavigationRail({Key? key, required this.state}) : super(key: key);
+  const AppNavigationRail({super.key, required this.state});
 
+  @override
   ResponsiveConsumerState<AppNavigationRail> createState() =>
       _AppNavigationRailState();
 }
@@ -73,7 +74,7 @@ class _AppNavigationRailState
   }
 
   Widget buildLeading() {
-    return Column(
+    return const Column(
       children: [
         SizedBox(height: 40),
         RGInitial(),
@@ -85,26 +86,26 @@ class _AppNavigationRailState
   List<NavigationRailDestination> destinations() {
     return [
       NavigationRailDestination(
-        icon: SizedBox(height: 26, width: 26, child: MyImage()),
+        icon: const SizedBox(height: 26, width: 26, child: MyImage()),
         label: AutoSizeText(
           'Rakshith Gajendra',
           style: GoogleFonts.sacramento(
               fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
         ),
       ),
-      NavigationRailDestination(
+      const NavigationRailDestination(
         icon: Icon(Icons.computer),
         label: Text("Career"),
       ),
-      NavigationRailDestination(
+      const NavigationRailDestination(
         icon: Icon(Icons.code),
         label: Text("Projects"),
       ),
-      NavigationRailDestination(
+      const NavigationRailDestination(
         icon: Icon(Icons.star_border_rounded),
         label: Text("Education"),
       ),
-      NavigationRailDestination(
+      const NavigationRailDestination(
         icon: Icon(Icons.email_outlined),
         label: Text("Contact"),
       ),

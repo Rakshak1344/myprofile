@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:profile/resources/resources.dart';
 
 class BuiltResponsiveFlutter extends StatelessWidget {
+  const BuiltResponsiveFlutter({super.key});
+
   // final flutterIcon = "https://img.icons8.com/ios/50/000000/flutter.png";
 
   @override

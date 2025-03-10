@@ -22,7 +22,7 @@ class ProjectsPage extends ResponsiveStatelessWidget {
   }
 
   Widget buildProjectsPage(context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [
           SizedBox(height: 32),

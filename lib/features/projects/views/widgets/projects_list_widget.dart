@@ -35,7 +35,7 @@ class ProjectsListWidget extends ResponsiveStatelessWidget {
           title: "Projects",
           preTitle: isPreview ? "Recent" : "Worked on these",
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Wrap(
           runSpacing: 20,
           spacing: 20,
@@ -50,7 +50,7 @@ class ProjectsListWidget extends ResponsiveStatelessWidget {
   Widget buildProjectCard(context, ProjectData p) {
     return Container(
       width: 300,
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
         border: Border.all(),
         borderRadius: BorderRadius.circular(16),
@@ -58,12 +58,12 @@ class ProjectsListWidget extends ResponsiveStatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             p.name,
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          Container(
+          SizedBox(
             height: 200,
             width: 200,
             child: ClipRRect(
@@ -71,21 +71,21 @@ class ProjectsListWidget extends ResponsiveStatelessWidget {
               child: Image.asset(p.image!, fit: BoxFit.cover),
             ),
           ),
-          SizedBox(height: 22),
+          const SizedBox(height: 22),
           Row(
             children: [
               if (p.playStoreUrl != null) ...[
                 Expanded(child: UrlButton(url: p.playStoreUrl!)),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
               ],
               if (p.pubDevUrl != null) ...[
                 Expanded(child: UrlButton(url: p.pubDevUrl!)),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
               ],
               Expanded(child: ReadmoreButton(slug: p.slug)),
             ],
           ),
-          SizedBox(height: 22)
+          const SizedBox(height: 22)
         ],
       ),
     );

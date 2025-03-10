@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ProjectHeaderName extends StatelessWidget {
+  const ProjectHeaderName({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         RichText(
-          text: TextSpan(style: TextStyle(letterSpacing: 5), children: [
+          text: const TextSpan(style: TextStyle(letterSpacing: 5), children: [
             TextSpan(
                 text: "P", style: TextStyle(color: Colors.red, fontSize: 36)),
             TextSpan(
@@ -16,7 +18,7 @@ class ProjectHeaderName extends StatelessWidget {
           ]),
         ),
         RichText(
-          text: TextSpan(style: TextStyle(letterSpacing: 5), children: [
+          text: const TextSpan(style: TextStyle(letterSpacing: 5), children: [
             TextSpan(
                 text: "{", style: TextStyle(color: Colors.black, fontSize: 36)),
             TextSpan(

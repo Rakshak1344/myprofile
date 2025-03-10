@@ -18,10 +18,10 @@ class AboutMe extends ResponsiveStatelessWidget {
   Widget buildMobile(BuildContext context) {
     return Column(
       children: [
-        TitleAndLine(preTitle: "Get to know more", title: "About Me."),
-        SizedBox(height: 20),
+        const TitleAndLine(preTitle: "Get to know more", title: "About Me."),
+        const SizedBox(height: 20),
         buildCareer(),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         buildEducation(),
       ],
     );
@@ -35,12 +35,12 @@ class AboutMe extends ResponsiveStatelessWidget {
   Widget buildAboutMe() {
     return Column(
       children: [
-        TitleAndLine(preTitle: "Get to know more", title: "About Me."),
-        SizedBox(height: 20),
+        const TitleAndLine(preTitle: "Get to know more", title: "About Me."),
+        const SizedBox(height: 20),
         Row(
           children: [
             Expanded(child: buildCareer()),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Expanded(child: buildEducation()),
           ],
         ),
@@ -51,15 +51,15 @@ class AboutMe extends ResponsiveStatelessWidget {
   Widget buildAboutMeDesktop() {
     return Column(
       children: [
-        TitleAndLine(preTitle: "Get to know more", title: "About Me."),
-        SizedBox(height: 20),
+        const TitleAndLine(preTitle: "Get to know more", title: "About Me."),
+        const SizedBox(height: 20),
         Row(
           children: [
-            SizedBox(width: 80),
+            const SizedBox(width: 80),
             Expanded(child: buildCareer()),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Expanded(child: buildEducation()),
-            SizedBox(width: 80),
+            const SizedBox(width: 80),
           ],
         ),
       ],
@@ -75,7 +75,7 @@ class AboutMe extends ResponsiveStatelessWidget {
       description:
           'My academic background has equipped me with a strong foundation in software engineering, system design, and cloud technologies, enabling me to build high-performance applications that drive innovation.',
       navigateTo: AppRouteName.education,
-      images: [
+      images: const [
         EducationImage.aims,
         EducationImage.acharya,
         EducationImage.svpuc,

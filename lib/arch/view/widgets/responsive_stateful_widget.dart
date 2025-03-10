@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:profile/arch/view/responsive_mixin.dart';
 
 abstract class ResponsiveStatefulWidget extends StatefulWidget {
-  const ResponsiveStatefulWidget({Key? key}) : super(key: key);
+  const ResponsiveStatefulWidget({super.key});
 
   @override
   ResponsiveState createState();

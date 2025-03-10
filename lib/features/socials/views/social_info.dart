@@ -5,6 +5,8 @@ import 'package:profile/features/socials/data/models/social_info_data.dart';
 import 'package:profile/utils/url_launcher_extension.dart';
 
 class SocialInfo extends ResponsiveStatelessWidget {
+  const SocialInfo({super.key});
+
   @override
   Widget buildDesktop(BuildContext context) {
     return buildLargeScreen(context);

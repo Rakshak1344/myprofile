@@ -26,8 +26,8 @@ class RGInitial extends ResponsiveStatelessWidget {
 
   Widget buildRGInitial(context, {double? fontSize}) {
     return AnimatedContainer(
-      padding: EdgeInsets.all(10),
-      duration: Duration(seconds: 3),
+      padding: const EdgeInsets.all(10),
+      duration: const Duration(seconds: 3),
       child: Row(
         children: <Widget>[
           InkWell(
@@ -43,7 +43,7 @@ class RGInitial extends ResponsiveStatelessWidget {
           ),
           AnimatedContainer(
             curve: Curves.easeIn,
-            duration: Duration(seconds: 10),
+            duration: const Duration(seconds: 10),
             height: 5,
             width: 5,
             decoration: BoxDecoration(

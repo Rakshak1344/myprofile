@@ -9,8 +9,9 @@ import 'package:profile/navigation/routes/app_route_name.dart';
 class AppNavigationButtons extends ResponsiveConsumerStatefulWidget {
   final GoRouterState state;
 
-  const AppNavigationButtons({Key? key, required this.state}) : super(key: key);
+  const AppNavigationButtons({super.key, required this.state});
 
+  @override
   ResponsiveConsumerState<AppNavigationButtons> createState() =>
       _AppNavigationButtonsState();
 }
