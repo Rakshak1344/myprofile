@@ -19,6 +19,9 @@ use_references_list: false
 package: resources
 
 groups:
+  - path: assets/lottie
+    class_name: MyLottie
+    types: [ .lottie, .json ]
   - path: assets/logos
     class_name: Logos
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]

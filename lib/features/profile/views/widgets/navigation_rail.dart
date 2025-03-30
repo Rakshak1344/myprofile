@@ -86,7 +86,7 @@ class _AppNavigationRailState
   List<NavigationRailDestination> destinations() {
     return [
       NavigationRailDestination(
-        icon: const SizedBox(height: 26, width: 26, child: MyImage()),
+        icon: SizedBox(height: 26, width: 26, child: buildMyImage()),
         label: AutoSizeText(
           'Rakshith Gajendra',
           style: GoogleFonts.sacramento(
@@ -110,5 +110,28 @@ class _AppNavigationRailState
         label: Text("Contact"),
       ),
     ];
+  }
+
+  Widget buildMyImage() {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 200),
+      height: MediaQuery.of(context).size.height * 0.25,
+      width: MediaQuery.of(context).size.height * 0.25,
+      decoration: buildBoxDecoration(),
+    );
+  }
+
+  BoxDecoration buildBoxDecoration() {
+    const url =
+        "https://pbs.twimg.com/profile_images/1146055708569292800/DaVWnQm3_400x400.jpg";
+
+    return const BoxDecoration(
+      shape: BoxShape.circle,
+      image: DecorationImage(
+        image: NetworkImage(url),
+        alignment: Alignment.center,
+        fit: BoxFit.cover,
+      ),
+    );
   }
 }
