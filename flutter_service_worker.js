@@ -14,8 +14,8 @@ const RESOURCES = {"canvaskit/skwasm.js": "5d4f9263ec93efeb022bb14a3881d240",
 "canvaskit/chromium/canvaskit.js": "901bb9e28fac643b7da75ecfd3339f3f",
 "canvaskit/chromium/canvaskit.js.symbols": "ee7e331f7f5bbf5ec937737542112372",
 "main.dart.mjs": "6065d43877bbaa499bfc18598cfa05fb",
-"index.html": "ca2bdfeeb0e4a44ddc78be169bf842c6",
-"/": "ca2bdfeeb0e4a44ddc78be169bf842c6",
+"index.html": "a358cefc103cb8d1bb8b57fd0aec7a49",
+"/": "a358cefc103cb8d1bb8b57fd0aec7a49",
 "assets/NOTICES": "9195c04ec63f5bd73230d5a97981c598",
 "assets/assets/logos/superpay.webp": "f85c74f59bcd207190bd967d2f8f9b1d",
 "assets/assets/logos/r.webp": "42850dd0c8a70b5b7aea7b85f439dd68",
@@ -66,7 +66,7 @@ const RESOURCES = {"canvaskit/skwasm.js": "5d4f9263ec93efeb022bb14a3881d240",
 "manifest.json": "8b6c9bfa34e3a85781250220d5e4dd99",
 "favicon.png": "f0cbe14f58b43cc393defa6e45f58973",
 "main.dart.wasm": "2dd4a13d6ff9091e57d544c774f83335",
-"flutter_bootstrap.js": "6324de1ebaf80b45c65159d51e759617"};
+"flutter_bootstrap.js": "44a4253821ab5fdd576e018588826072"};
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = ["main.dart.js",
