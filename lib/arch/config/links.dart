@@ -12,7 +12,7 @@ class My {
       'https://www.linkedin.com/in/rakshith-rakshak-4bb720173/';
   final String twitter = 'https://twitter.com/Rakshithdev14';
   final String resume =
-      'https://drive.google.com/file/d/1JxMFNLafitFDw1CcrOMlcWVwZ8t95o_E/view?usp=sharing';
+      'https://drive.google.com/file/d/1MJJyTJA9wL-2MQbGC1GTQ00LEjCQSdYk/view?usp=sharing';
 
   /// Github
   final String github = 'https://github.com/Rakshak1344';
