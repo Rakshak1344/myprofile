@@ -8,8 +8,7 @@ class My {
   const My();
 
   /// Socials
-  final String linkedIn =
-      'https://www.linkedin.com/in/rakshith-rakshak-4bb720173/';
+  final String linkedIn = 'https://www.linkedin.com/in/rakshak1344/';
   final String twitter = 'https://twitter.com/Rakshithdev14';
   final String resume =
       'https://drive.google.com/file/d/1MJJyTJA9wL-2MQbGC1GTQ00LEjCQSdYk/view?usp=sharing';

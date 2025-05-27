@@ -46,10 +46,10 @@ class _ProfilePageState extends ResponsiveConsumerState<ProfilePage> {
             ProfileInfo(),
 
             SizedBox(height: 40),
-            AboutMe(),
+            ProjectsListWidget(isPreview: true),
 
             SizedBox(height: 40),
-            ProjectsListWidget(isPreview: true),
+            AboutMe(),
 
             SizedBox(height: 40),
             ExploreMyExperience(),
