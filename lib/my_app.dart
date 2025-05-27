@@ -25,10 +25,3 @@ class _MyAppState extends ConsumerState<MyApp> {
     );
   }
 }
-
-//       theme: ThemeData(
-//         primaryColorDark: Colors.black38,
-//         brightness: Brightness.light,
-//         scaffoldBackgroundColor: Colors.white70,
-//         // backgroundColor: Colors.white70
-//       ),
