@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:profile/arch/analytics.dart';
 import 'package:profile/arch/config/app_config.dart';
 import 'package:profile/arch/navigation/route_provider.dart';
 import 'package:profile/navigation/routes/app_route_provider.dart';
@@ -19,7 +20,7 @@ Raw<GoRouter> goRouter(GoRouterRef ref) {
     refreshListenable: notifier,
     redirect: notifier.redirect,
     routes: AppRouter().routes(),
-    // initialLocation: '/',
+    observers: [AnalyticsNavigationObserver()],
   );
 }
 
