@@ -5,7 +5,7 @@ import 'package:profile/my_app_config.dart';
 import 'package:profile/splash_app.dart';
 
 void main() {
-  setUrlStrategy(const HashUrlStrategy());
+  setUrlStrategy(PathUrlStrategy());
   runApp(const SplashApp());
 
   MyAppConfig().init(child: const MyApp()).then((widget) => runApp(widget));
