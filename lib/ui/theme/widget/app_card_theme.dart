@@ -13,7 +13,7 @@ class AppCardTheme {
     );
   }
 
-  static CardTheme dark(ThemeData themeData) {
+  static CardThemeData dark(ThemeData themeData) {
     return themeData.copyWith().cardTheme;
   }
 }
