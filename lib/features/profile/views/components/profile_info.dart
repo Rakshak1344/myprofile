@@ -87,6 +87,7 @@ class ProfileInfo extends ResponsiveStatelessWidget {
       "Hi there! Glad to meet you, I'm",
       textScaler: const TextScaler.linear(2),
       style: Theme.of(context).textTheme.bodySmall,
+      textAlign: TextAlign.center,
     );
   }
 }
