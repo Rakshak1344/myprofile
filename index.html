@@ -1,63 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W83HDY3GLB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W83HDY3GLB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-W83HDY3GLB');
-  </script>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+        gtag('config', 'G-W83HDY3GLB');
+    </script>
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+    <!-- Base href for Flutter Web -->
+    <base href="/">
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
+    <!-- Open Graph Meta Tags for WhatsApp/LinkedIn/etc. -->
+    <meta property="og:title" content="Rakshith Gajendra's Profile">
+    <meta property="og:description" content="Explore my work, experience, and projects!">
+    <meta property="og:image" content="https://rakshak1344.github.io/myprofile/icons/Icon-512.png">
+    <meta property="og:url" content="https://rakshak1344.github.io/myprofile/">
+    <meta property="og:type" content="website">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Rakshith Gajendra's Profile">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Open Graph Meta Tags for WhatsApp Link Preview -->
-  <meta property="og:title" content="Rakshith Gajendra's Profile">
-  <meta property="og:description" content="Explore my work, experience, and projects!">
-  <meta property="og:image" content="https://rakshak1344.github.io/myprofile/icons/Icon-512.png">
-  <meta property="og:url" content="https://rakshak1344.github.io/myprofile/">
-  <meta property="og:type" content="website">
+    <!-- Twitter Card for social preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rakshith Gajendra's Profile">
+    <meta name="twitter:description" content="Explore my work, experience, and projects!">
+    <meta name="twitter:image" content="https://rakshak1344.github.io/myprofile/icons/Icon-512.png">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Rakshith Gajendra's Profile">
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <!-- Twitter Card for better social media previews -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rakshith Gajendra's Profile">
-  <meta name="twitter:description" content="Explore my work, experience, and projects!">
-  <meta name="twitter:image" content="https://rakshak1344.github.io/myprofile/icons/Icon-512.png">
+    <title>Rakshith Gajendra's Profile</title>
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <!-- Custom loader styling -->
+    <style>
+        #custom-loader {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: white;
+          font-family: sans-serif;
+          font-size: 1rem;
+          color: #333;
+        }
 
-  <title>Rakshith Gajendra's Profile</title>
-  <link rel="manifest" href="manifest.json">
+        #custom-loader img {
+          width: 64px;
+          height: 64px;
+          margin-bottom: 16px;
+          animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+          0% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.1); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
+
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+<!-- Custom Loader -->
+<div id="custom-loader">
+    <img src="icons/Icon-192.png" alt="Loading Logo"/>
+    <p>Loading Rakshith's Profile...</p>
+</div>
+
+<!-- Remove loader when Flutter finishes loading -->
+<script>
+    window.addEventListener('load', function () {
+      document.getElementById('custom-loader')?.remove();
+    });
+</script>
+
+<!-- Flutter Web app loader -->
+<script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
