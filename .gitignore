@@ -29,6 +29,12 @@
 .pub-cache/
 .pub/
 /build/
+.fvm/
+
+# Gen files
+*.g.dart
+*.gform.dart
+*.freezed.dart
 
 # Web related
 
