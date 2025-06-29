@@ -1,63 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W83HDY3GLB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-W83HDY3GLB');
     </script>
 
-    <!-- Base href for Flutter Web -->
+    <!-- Flutter Web base path (will be replaced by --base-href) -->
     <base href="$FLUTTER_BASE_HREF">
 
     <meta charset="UTF-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="A new Flutter project.">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="Rakshith Gajendra's personal Flutter portfolio">
 
-    <!-- Open Graph Meta Tags for WhatsApp/LinkedIn/etc. -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Rakshith Gajendra's Profile">
     <meta property="og:description" content="Explore my work, experience, and projects!">
     <meta property="og:image" content="https://rakshak1344.github.io/myprofile/icons/Icon-512.png">
     <meta property="og:url" content="https://rakshak1344.github.io/myprofile/">
     <meta property="og:type" content="website">
 
-    <!-- iOS meta tags & icons -->
+    <!-- iOS & PWA Meta -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Rakshith Gajendra's Profile">
+
+    <!-- Favicons & Manifest -->
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-    <!-- Twitter Card for social preview -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rakshith Gajendra's Profile">
-    <meta name="twitter:description" content="Explore my work, experience, and projects!">
-    <meta name="twitter:image" content="https://rakshak1344.github.io/myprofile/icons/Icon-512.png">
-
-    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" href="favicon.png"/>
-
-    <title>Rakshith Gajendra's Profile</title>
+    <link rel="icon" href="favicon.png">
     <link rel="manifest" href="manifest.json">
 
-    <!-- Custom loader styling -->
+    <title>Rakshith Gajendra's Profile</title>
+
+    <!-- Custom Loader CSS -->
     <style>
         #custom-loader {
           display: flex;
           flex-direction: column;
-          justify-content: center;
           align-items: center;
+          justify-content: center;
           height: 100vh;
           background-color: white;
-          font-family: sans-serif;
-          font-size: 1rem;
           color: #333;
+          font-family: sans-serif;
         }
 
         #custom-loader img {
@@ -65,6 +57,19 @@
           height: 64px;
           margin-bottom: 16px;
           animation: pulse 1.5s infinite;
+        }
+
+        .spinner {
+          width: 40px;
+          height: 40px;
+          border: 4px solid #ccc;
+          border-top-color: #4285f4;
+          border-radius: 50%;
+          animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+          to { transform: rotate(360deg); }
         }
 
         @keyframes pulse {
@@ -76,20 +81,23 @@
 </head>
 
 <body>
-<!-- Custom Loader -->
+<!-- Custom Loading UI -->
 <div id="custom-loader">
-    <img src="icons/Icon-192.png" alt="Loading Logo"/>
-    <p>Loading Rakshith's Profile...</p>
+    <img src="icons/Icon-192.png" alt="Loading Rakshith's Profile" />
+    <div class="spinner"></div>
 </div>
 
-<!-- Remove loader when Flutter finishes loading -->
+<!-- Remove loader on first Flutter frame or after 15s fallback -->
 <script>
-    window.addEventListener('load', function () {
+    const removeLoader = () => {
       document.getElementById('custom-loader')?.remove();
-    });
+    };
+
+    window.addEventListener('flutter-first-frame', removeLoader);
+    setTimeout(removeLoader, 15000); // Fallback in case Flutter fails to emit
 </script>
 
-<!-- Flutter Web app loader -->
+<!-- Flutter Web Bootstrap Script -->
 <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
