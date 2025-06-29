@@ -2,14 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:profile/arch/config/links.dart';
-import 'package:profile/features/common/data/convertors/icon_data_convertor.dart';
 import 'package:profile/features/projects/data/models/project_app_screenshots.dart';
 import 'package:profile/features/projects/data/models/readme_data.dart';
 import 'package:profile/resources/resources.dart';
 
 part 'project_data.freezed.dart';
-
-part 'project_data.g.dart';
 
 @freezed
 class ProjectData with _$ProjectData {
@@ -19,7 +16,7 @@ class ProjectData with _$ProjectData {
     required String description,
     String? image,
     List<String>? images,
-    @IconDataConverter() List<IconData>? techIcons,
+    List<IconData>? techIcons,
     List<String>? techIconAssets,
     String? companyLogo,
     String? companyName,
@@ -29,9 +26,6 @@ class ProjectData with _$ProjectData {
     String? pubDevUrl,
     String? readmeContentOrLink,
   }) = _ProjectData;
-
-  factory ProjectData.fromJson(Map<String, dynamic> json) =>
-      _$ProjectDataFromJson(json);
 
   static List<ProjectData> get projects => <ProjectData>[
         _indipeBusiness,

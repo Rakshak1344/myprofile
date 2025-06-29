@@ -32,7 +32,7 @@ jobs:
           fvm dart pub global run spider build
 
       - name: Build Flutter Web
-        run: fvm flutter build web --release --wasm --no-tree-shake-icons --base-href="/"
+        run: fvm flutter build web --release --wasm --base-href="/"
 
 #      - name: Add .nojekyll and 404.html
 #        run: |
